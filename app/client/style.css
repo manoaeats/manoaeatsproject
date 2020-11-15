@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Antic');
+
 .manoaeats-landing-background {
   background: url('images/manoa-campus.jpg') no-repeat center fixed;
   background-size: cover;
+}
+
+.manoaeats-landing-background {
+  background: no-repeat url('images/manoa-campus.jpg');
+  background-size: cover;
+  height: 800px;
+  padding-top: 100px;
+  margin-top: -10px;
+  font-family: Antic;
 }

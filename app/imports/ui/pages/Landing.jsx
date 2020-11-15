@@ -1,22 +1,25 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Icon, Header } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-        <Grid id='landing-page' verticalAlign='middle' textAlign='center' container>
+        <div className="manoaeats-landing-background">
+          <Grid container centered stackable columns={2}>
+            <Grid.Column textAlign='center'>
+              <Icon size="huge" name="users"/>
+              <Header as='h1'>Users</Header>
+              <Header as='h3'>You can search and have a faster way of locating the food that you wanted. You will be able to see the daily top picks and foods available.</Header>
+            </Grid.Column>
 
-          <Grid.Column width={4}>
-            <Image size='small' circular src="/images/meteor-logo.png"/>
-          </Grid.Column>
-
-          <Grid.Column width={8}>
-            <h1>Welcome to this template</h1>
-            <p>Now get to work and modify this app!</p>
-          </Grid.Column>
-
-        </Grid>
+            <Grid.Column textAlign='center'>
+              <Icon size="huge" name="users"/>
+              <Header as='h1'>Vendors</Header>
+              <Header as='h3'>Add your business for the users to see your location, hours of operation, and menu.</Header>
+            </Grid.Column>
+          </Grid>
+        </div>
     );
   }
 }

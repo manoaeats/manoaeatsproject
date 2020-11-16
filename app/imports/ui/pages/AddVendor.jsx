@@ -47,7 +47,8 @@ class AddVendor extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Add Vendor</Header>
-            <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>              <Segment>
+            <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+              <Segment>
                 <TextField name='name'/>
                 <TextField name='cuisine'/>
                 <TextField name='location'/>

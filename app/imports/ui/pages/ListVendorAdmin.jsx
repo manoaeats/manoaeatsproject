@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
-import  VendorItemAdmin  from '../components/VendorItemAdmin';
+import VendorItemAdmin from '../components/VendorItemAdmin';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListVendorAdmin extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 // import Image from 'semantic-ui-react/dist/commonjs/elements/Image';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */

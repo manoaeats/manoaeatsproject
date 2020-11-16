@@ -5,7 +5,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
 import AllVendorItem from '../components/AllVendorItem';
-import VendorItem from '../components/VendorItem';
 // import { Comments } from '/imports/api/comment/Comment';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -43,6 +42,6 @@ export default withTracker(() => {
 
   return {
     vendors: Vendors.collection.find({}).fetch(),
-    ready: (subscription.ready())// && subscription2.ready()),
+    ready: (subscription.ready()), // && subscription2.ready()),
   };
 })(ListAllVendors);

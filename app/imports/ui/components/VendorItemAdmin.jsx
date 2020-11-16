@@ -1,8 +1,7 @@
 import React from 'react';
 import { Image, Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 class VendorItemAdmin extends React.Component {
@@ -35,4 +34,4 @@ VendorItemAdmin.propTypes = {
   vendor: PropTypes.object.isRequired,
 };
 
-export default withRouter (VendorItemAdmin);
+export default withRouter(VendorItemAdmin);

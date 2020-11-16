@@ -18,7 +18,7 @@ class TodayTopPick extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Today's Top Pick</Header>
+          <Header as="h2" textAlign="center">Today Top Pick</Header>
           <Card.Group>
               {this.props.vendors.map((vendor) => <VendorItem key={vendor._id} vendor={vendor} />)}
             </Card.Group>

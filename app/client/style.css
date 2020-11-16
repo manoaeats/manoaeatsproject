@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Antic');
+
+body {
+  font-family: Antic, sans-serif;
+}
+
+.manoaeats-landing-background {
+  background: url('images/manoa-campus.jpg') no-repeat center fixed;
+  background-size: cover;
+}
+
+.manoaeats-landing-background {
+  background: no-repeat url('images/manoa-campus.jpg');
+  background-size: cover;
+  height: 800px;
+  padding-top: 100px;
+  margin-top: -10px;
+  font-family: Antic;
+}
+
 .vendor-list {
-  background-color: #263238;
+  background-color: ##024731;
   background-size: cover;
   padding-top: 30px;
   margin-top: -10px;

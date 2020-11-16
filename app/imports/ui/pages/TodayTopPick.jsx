@@ -7,7 +7,7 @@ import { Vendors } from '../../api/vendor/Vendor';
 import VendorItem from '../components/VendorItem';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListVendor extends React.Component {
+class TodayTopPick extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -17,18 +17,18 @@ class ListVendor extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className="vendor-list"><Container>
-          <Header as="h2" textAlign="center" inverted>My Vendors</Header>
+        <Container>
+          <Header as="h2" textAlign="center">Today's Top Pick</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor) => <VendorItem key={vendor._id} vendor={vendor}/>)}
-          </Card.Group>
-        </Container></div>
+              {this.props.vendors.map((vendor) => <VendorItem key={vendor._id} vendor={vendor} />)}
+            </Card.Group>
+        </Container>
     );
   }
 }
 
 /** Require an array of Stuff documents in the props. */
-ListVendor.propTypes = {
+TodayTopPick.propTypes = {
   vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -41,4 +41,4 @@ export default withTracker(() => {
     vendors: Vendors.collection.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListVendor);
+})(TodayTopPick);

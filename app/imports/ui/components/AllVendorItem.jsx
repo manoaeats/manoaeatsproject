@@ -1,11 +1,12 @@
 import React from 'react';
-import { Image, Card } from 'semantic-ui-react';
+import { Image, Card, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+// import AddComment from '/imports/ui/components/AddComment';
+// import Comment from '/imports/ui/components/Comment';
 
-/** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
-class VendorItemAdmin extends React.Component {
+/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+class VendorItem extends React.Component {
   render() {
     return (
         <Card centered>
@@ -22,7 +23,6 @@ class VendorItemAdmin extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <a>
-              <Link to={`/edit/${this.props.vendor._id}`}>Edit</Link>
             </a>
           </Card.Content>
         </Card>
@@ -31,8 +31,10 @@ class VendorItemAdmin extends React.Component {
 }
 
 /** Require a document to be passed to this component. */
-VendorItemAdmin.propTypes = {
+VendorItem.propTypes = {
   vendor: PropTypes.object.isRequired,
+  comments: PropTypes.array.isRequired,
 };
 
-export default withRouter (VendorItemAdmin);
+/** Wrap this component in withRouter since we use the <Link> React Router element. */
+export default withRouter(VendorItem);

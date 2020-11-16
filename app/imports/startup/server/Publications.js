@@ -29,3 +29,17 @@ Meteor.publish(null, function () {
   }
   return this.ready();
 });
+
+Meteor.publish(Vendors.allPublicationName, function () {
+  if (this.userId) {
+    return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(null, function () {
+  if (this.userId) {
+    return Meteor.roleAssignment.find({ 'user._id': this.userId });
+  }
+  return this.ready();
+});

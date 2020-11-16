@@ -10,4 +10,5 @@
     { "name": "Hot Tacos", "cuisine": "Mexican", "location": "Korean Studies", "image": "/images/hottacos.jpg", "owner": "admin@foo.com", "price": "$" },
     { "name": "Dunkin’", "cuisine": "Donuts", "location": "Paradise Palms Café", "image": "/images/dunkin.jpg", "owner": "admin@foo.com", "price": "$" }
   ]
+
 }

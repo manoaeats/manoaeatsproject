@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Table, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
@@ -17,25 +17,12 @@ class ListVendorAdmin extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
-          <Header as="h2" textAlign="center">List Vendor (Admin)</Header>
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Cuisine</Table.HeaderCell>
-                <Table.HeaderCell>Location</Table.HeaderCell>
-                <Table.HeaderCell>Image</Table.HeaderCell>
-                <Table.HeaderCell>Price</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-                <Table.HeaderCell>Owner</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.vendors.map((vendor) => <VendorItemAdmin key={vendor._id} vendor={vendor} />)}
-            </Table.Body>
-          </Table>
-        </Container>
+        <div className="vendor-list"><Container>
+          <Header as="h2" textAlign="center" inverted>Vendors (Admin)</Header>
+          <Card.Group>
+            {this.props.vendors.map((vendor) => <VendorItemAdmin key={vendor._id} vendor={vendor}/>)}
+          </Card.Group>
+        </Container></div>
     );
   }
 }

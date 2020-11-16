@@ -27,9 +27,9 @@ class AddVendor extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { name, cuision, location, image, price } = data;
+    const { name, cuisine, location, image, price } = data;
     const owner = Meteor.user().username;
-    Vendors.collection.insert({ name, cuision, location, image, price, owner },
+    Vendors.collection.insert({ name, cuisine, location, image, price, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -47,8 +47,7 @@ class AddVendor extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Add Vendor</Header>
-            <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-              <Segment>
+            <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>              <Segment>
                 <TextField name='name'/>
                 <TextField name='cuisine'/>
                 <TextField name='location'/>

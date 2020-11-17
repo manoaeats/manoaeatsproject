@@ -11,6 +11,7 @@ class VendorItemAdmin extends React.Component {
     console.log(`item to delete is: ${docID}`);
     this.props.Vendors.collection.remove(docID);
   }
+
   render() {
     return (
         <Table.Row>

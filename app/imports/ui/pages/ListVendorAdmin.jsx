@@ -21,13 +21,13 @@ class ListVendorAdmin extends React.Component {
           <Header as="h2" textAlign="center" inverted>Admin</Header>
           <Grid container centered stackable columns={2}>
             <Grid.Column textAlign='center'>
-              <Icon size="huge" name="edit icon" inverted/>
+              <Icon size="huge" name="edit" inverted/>
               <Header as='h2' inverted>Remove & Edit</Header>
               <Header as='h4' inverted>Permitted Admin Users are able to edit or delete specific vendors that are no longer available</Header>
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Icon size="huge" name="list ul icon" inverted/>
+              <Icon size="huge" name="list ul" inverted/>
               <Header as='h2' inverted>List of users</Header>
               <Header as='h4' inverted>Admin users can also view a list of all registered users on the application</Header>
             </Grid.Column>

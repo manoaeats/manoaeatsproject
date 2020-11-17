@@ -16,23 +16,27 @@ class ListVendorAdmin extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const fontStyle ={
+      fontFamily: ["Antics", "serif"],
+    }
+
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>Admin</Header>
+          <Header style={fontStyle} as="h2" textAlign="center" inverted>Admin</Header>
           <Grid container centered stackable columns={2}>
             <Grid.Column textAlign='center'>
               <Icon size="huge" name="edit" inverted/>
-              <Header as='h2' inverted>Remove & Edit</Header>
-              <Header as='h4' inverted>Permitted Admin Users are able to edit or delete specific vendors that are no longer available</Header>
+              <Header style={fontStyle} as='h2' inverted>Remove & Edit</Header>
+              <Header style={fontStyle} as='h4' inverted>Permitted Admin Users are able to edit or delete specific vendors that are no longer available</Header>
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
               <Icon size="huge" name="list ul" inverted/>
-              <Header as='h2' inverted>List of users</Header>
-              <Header as='h4' inverted>Admin users can also view a list of all registered users on the application</Header>
+              <Header style={fontStyle} as='h2' inverted>List of users</Header>
+              <Header style={fontStyle} as='h4' inverted>Admin users can also view a list of all registered users on the application</Header>
             </Grid.Column>
           </Grid>
-          <Table celled>
+          <Table celled style={fontStyle}>
             <Table.Header><Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>Cuisine</Table.HeaderCell>

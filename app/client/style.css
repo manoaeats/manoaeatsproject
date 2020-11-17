@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Antic');
 
 body {
-  font-family: Antic, sans-serif;
-}
-
-.manoaeats-landing-background {
-  background: url('images/manoa-campus.jpg') no-repeat center fixed;
-  background-size: cover;
+  font-family: Antic, serif;
 }
 
 .manoaeats-landing-background {
@@ -15,7 +10,7 @@ body {
   height: 800px;
   padding-top: 100px;
   margin-top: -10px;
-  font-family: Antic;
+  font-family: Antic, serif;
 }
 
 .vendor-list {
@@ -25,3 +20,8 @@ body {
   margin-top: -10px;
   padding-bottom: 100px;
 }
+
+.navigatorbar .item, .ui.inverted.header {
+  font-family: Antic, serif;
+}
+

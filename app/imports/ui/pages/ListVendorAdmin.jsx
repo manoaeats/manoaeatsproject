@@ -16,9 +16,9 @@ class ListVendorAdmin extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const fontStyle ={
-      fontFamily: ["Antics", "serif"],
-    }
+    const fontStyle = {
+      fontFamily: ['Antics', 'serif'],
+    };
 
     return (
         <Container>

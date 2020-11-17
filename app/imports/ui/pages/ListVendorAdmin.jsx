@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Table, Container, Header, Loader } from 'semantic-ui-react';
+import { Table, Container, Header, Loader, Grid, Icon } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
@@ -19,8 +19,21 @@ class ListVendorAdmin extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center" inverted>Admin</Header>
+          <Grid container centered stackable columns={2}>
+            <Grid.Column textAlign='center'>
+              <Icon size="huge" name="edit icon" inverted/>
+              <Header as='h2' inverted>Remove & Edit</Header>
+              <Header as='h4' inverted>Permitted Admin Users are able to edit or delete specific vendors that are no longer available</Header>
+            </Grid.Column>
+
+            <Grid.Column textAlign='center'>
+              <Icon size="huge" name="list ul icon" inverted/>
+              <Header as='h2' inverted>List of users</Header>
+              <Header as='h4' inverted>Admin users can also view a list of all registered users on the application</Header>
+            </Grid.Column>
+          </Grid>
           <Table celled>
-            <Table.Row>
+            <Table.Header><Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>Cuisine</Table.HeaderCell>
               <Table.HeaderCell>Location</Table.HeaderCell>
@@ -30,27 +43,29 @@ class ListVendorAdmin extends React.Component {
               <Table.HeaderCell>Remove</Table.HeaderCell>
 
             </Table.Row>
-          <Table.Body>
-            {this.props.vendors.map((vendor) => <VendorItemAdmin key={vendor._id} vendor={vendor} Vendors={Vendors}/>)}
-          </Table.Body>
-        </Table>
+            </Table.Header>
+            <Table.Body>
+              {this.props.vendors.map((vendor) => <VendorItemAdmin key={vendor._id} vendor={vendor}
+                                                                   Vendors={Vendors}/>)}
+            </Table.Body>
+          </Table>
         </Container>
-  );
+    );
   }
-  }
+}
 
-  /** Require an array of Stuff documents in the props. */
-  ListVendorAdmin.propTypes = {
+/** Require an array of Stuff documents in the props. */
+ListVendorAdmin.propTypes = {
   vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
-  };
+};
 
-  /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-  export default withTracker(() => {
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Vendors.adminPublicationName);
   return {
-  vendors: Vendors.collection.find({}).fetch(),
-  ready: subscription.ready(),
+    vendors: Vendors.collection.find({}).fetch(),
+    ready: subscription.ready(),
   };
-  })(ListVendorAdmin);
+})(ListVendorAdmin);

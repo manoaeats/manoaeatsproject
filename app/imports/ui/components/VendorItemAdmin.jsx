@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button, Icon } from 'semantic-ui-react';
+import { Image, Table, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ class VendorItemAdmin extends React.Component {
           <Table.Cell>{this.props.vendor.name}</Table.Cell>
           <Table.Cell>{this.props.vendor.cuisine}</Table.Cell>
           <Table.Cell>{this.props.vendor.location}</Table.Cell>
-          <Table.Cell>{this.props.vendor.image}</Table.Cell>
+          <Table.Cell><Image src={this.props.vendor.image} size='tiny' /></Table.Cell>
           <Table.Cell>{this.props.vendor.price}</Table.Cell>
           <Table.Cell>
             <Link to={`/edit/${this.props.vendor._id}`}>Edit</Link>

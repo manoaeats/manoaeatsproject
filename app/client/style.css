@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Antic');
 
-<<<<<<< HEAD
+
 body {
   font-family: Antic, serif;
 }
@@ -26,7 +26,6 @@ body {
   font-family: Antic, serif;
 }
 
-=======
 .manoaeats-landing-background {
   background:
       linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -37,4 +36,3 @@ body {
   margin: -10px -10px -10px -10px;
 }
 
->>>>>>> issue-02(1)

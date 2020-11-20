@@ -8,7 +8,7 @@ class UserHomePage extends React.Component {
         <div className="manoaeats-UserHomePage-background">
           <Grid container centered stackable columns={2}>
             <Grid.Column textAlign='center'>
-              <Header as='h2' inverted>Aloha</Header>
+              <Header as='h2' inverted>Aloha!</Header>
             </Grid.Column>
           </Grid>
         </div>

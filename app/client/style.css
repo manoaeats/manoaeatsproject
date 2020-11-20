@@ -5,15 +5,6 @@ body {
   font-family: Antic, serif;
 }
 
-.manoaeats-landing-background {
-  background: no-repeat url('images/manoa-campus.jpg');
-  background-size: cover;
-  height: 800px;
-  padding-top: 100px;
-  margin-top: -10px;
-  font-family: Antic, serif;
-}
-
 .vendor-list {
   background-color: #263238;
   background-size: cover;
@@ -35,4 +26,16 @@ body {
   padding-top: 200px;
   margin: -10px -10px -10px -10px;
 }
+
+.topmenu {
+  font-size: x-small;
+}
+
+.manoaeats-UserHomePage-background {
+  background: url('images/userhomepage.jpg') no-repeat center center fixed;
+  background-size: 100% 90%;
+  height: 675px;
+}
+
+
 

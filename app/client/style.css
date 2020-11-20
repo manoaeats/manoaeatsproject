@@ -35,7 +35,11 @@ body {
   background: url('images/userhomepage.jpg') no-repeat center center fixed;
   background-size: 100% 90%;
   height: 675px;
+  padding-top: 200px;
+  margin: -10px -10px -10px;
 }
+
+
 
 
 

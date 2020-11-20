@@ -6,10 +6,8 @@ class UserHomePage extends React.Component {
   render() {
     return (
         <div className="manoaeats-UserHomePage-background">
-          <Grid container centered stackable columns={2}>
-            <Grid.Column textAlign='center'>
-              <Header as='h2' inverted>Aloha!</Header>
-            </Grid.Column>
+          <Grid container centered >
+            <Header as='h2'>Aloha!</Header>
           </Grid>
         </div>
     );

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Antic');
-
+@import url('https://fonts.google.com/specimen/Niconne');
+@import url('https://fonts.google.com/specimen/Luckiest+Guy');
 
 body {
   font-family: Antic, serif;
@@ -37,6 +38,17 @@ body {
   height: 675px;
   padding-top: 200px;
   margin: -10px -10px -10px;
+}
+
+.user-home{
+  font-family: 'Niconne', Luckiest+Guy;
+  color: black;
+  font-size: 150px;
+  margin-top: 5%;
+}
+
+.search-bar{
+  margin-top: 100px;
 }
 
 

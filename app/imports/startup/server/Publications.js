@@ -37,6 +37,14 @@ Meteor.publish(Vendors.allPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Vendors.vendorPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+    return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+
 Meteor.publish(null, function () {
   if (this.userId) {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });

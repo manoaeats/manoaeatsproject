@@ -5,7 +5,7 @@ import { Vendors } from '../../api/vendor/Vendor.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
+  console.log(` Adding: ${data.name} (${data.owner})`);
   Vendors.collection.insert(data);
 }
 

@@ -1,6 +1,7 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
+    { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
@@ -10,6 +11,7 @@
     { "name": "Hot Tacos", "cuisine": "Mexican", "location": "Korean Studies", "image": "/images/hottacos.jpg", "owner": "admin@foo.com", "price": "$" },
     { "name": "Dunkin’", "cuisine": "Donuts", "location": "Paradise Palms Café", "image": "/images/dunkin.jpg", "owner": "admin@foo.com", "price": "$" }
   ],
+
   "monti": {
     "appId": "yYRRZHBkpku6aByNr",
     "appSecret": "ec371f6d-5770-4688-becd-02b2a52940ab"

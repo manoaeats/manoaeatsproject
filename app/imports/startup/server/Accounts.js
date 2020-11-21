@@ -14,10 +14,12 @@ function createUser(email, password, role) {
   if (role === 'admin') {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'admin');
-    Roles.addUsersToRoles(userID, 'vendor');
   }
   if (role === 'vendor') {
-    // Roles.createRole(role, { unlessExists: true });
+    Roles.createRole(role, { unlessExists: true });
+    Roles.addUsersToRoles(userID, 'vendor');
+  }
+  if(userID === 'admin') {
     Roles.addUsersToRoles(userID, 'vendor');
   }
 }

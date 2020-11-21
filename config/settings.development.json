@@ -1,13 +1,17 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
+    { "email": "admin2@foo.com", "password": "changeme", "role": "admin" },
+    { "email": "admin3@foo.com", "password": "changeme", "role": "admin" },
     { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "vendor2@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "vendor3@foo.com", "password": "changeme", "role": "vendor" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
   "defaultData": [
     { "name": "Panda Express", "cuisine": "Chinese", "location": "Paradise Palms Café", "image": "/images/panda.jpg", "owner": "john@foo.com", "price": "$" },
-    { "name": "Holoholo Grill", "cuisine": "Local", "location": "Paradise Palms Café", "image": "/images/holoholo.jpg", "owner": "john@foo.com", "price": "$" },
+    { "name": "Holoholo Grill", "cuisine": "Local", "location": "Paradise Palms Café", "image": "/images/holoholo.jpg", "owner": "vendor@foo.com", "price": "$" },
     { "name": "Hot Tacos", "cuisine": "Mexican", "location": "Korean Studies", "image": "/images/hottacos.jpg", "owner": "admin@foo.com", "price": "$" },
     { "name": "Dunkin’", "cuisine": "Donuts", "location": "Paradise Palms Café", "image": "/images/dunkin.jpg", "owner": "admin@foo.com", "price": "$" }
   ],

@@ -38,16 +38,11 @@ Meteor.publish(Vendors.allPublicationName, function () {
 });
 
 Meteor.publish(Vendors.vendorPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
-    return Vendors.collection.find();
-  }
-  return this.ready();
-});
-
-
-Meteor.publish(null, function () {
   if (this.userId) {
-    return Meteor.roleAssignment.find({ 'user._id': this.userId });
+    const username = Meteor.users.findOne(this.userId).username;
+    if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+      return Vendors.collection.find({ owner: username });
+    }
+    return this.ready();
   }
-  return this.ready();
 });

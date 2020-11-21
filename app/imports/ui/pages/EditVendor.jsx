@@ -31,7 +31,7 @@ class EditVendor extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Vendor</Header>
+            <Header as="h2" textAlign="center" inverted>Edit Vendor</Header>
             <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
@@ -63,8 +63,9 @@ export default withTracker(({ match }) => {
   const documentId = match.params._id;
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Vendors.adminPublicationName);
+  const subscription2 = Meteor.subscribe(Vendors.vendorPublicationName)
   return {
     doc: Vendors.collection.findOne(documentId),
-    ready: subscription.ready(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(EditVendor);

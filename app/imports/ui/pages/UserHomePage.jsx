@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Search } from 'semantic-ui-react';
+import { Grid, Search } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class UserHomePage extends React.Component {

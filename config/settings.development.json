@@ -10,10 +10,110 @@
   ],
 
   "defaultData": [
-    { "name": "Panda Express", "cuisine": "Chinese", "location": "Paradise Palms Café", "image": "/images/panda.jpg", "owner": "john@foo.com", "price": "$" },
-    { "name": "Holoholo Grill", "cuisine": "Local", "location": "Paradise Palms Café", "image": "/images/holoholo.jpg", "owner": "vendor@foo.com", "price": "$" },
-    { "name": "Hot Tacos", "cuisine": "Mexican", "location": "Korean Studies", "image": "/images/hottacos.jpg", "owner": "admin@foo.com", "price": "$" },
-    { "name": "Dunkin’", "cuisine": "Donuts", "location": "Paradise Palms Café", "image": "/images/dunkin.jpg", "owner": "admin@foo.com", "price": "$" }
+    {
+      "name": "Panda Express",
+      "cuisine": "Chinese",
+      "location": "Paradise Palms Café",
+      "image": "/images/pandaVendorImage.png",
+      "owner": "admin@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Holoholo Grill",
+      "cuisine": "Local",
+      "location": "Paradise Palms Café",
+      "image": "/images/HoloholoVendorImage.jpeg",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Hot Tacos",
+      "cuisine": "Mexican",
+      "location": "Korean Studies",
+      "image": "/images/HotTacosVendorImage.png",
+      "owner": "admin@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Dunkin’",
+      "cuisine": "Donuts",
+      "location": "Paradise Palms Café",
+      "image": "/images/DunkinVendorImage.jpg",
+      "owner": "admin@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Da Spot",
+      "cuisine": "Smoothies",
+      "location": "Saunders",
+      "image": "/images/DaSoptVendorImage.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "The Bean Counter",
+      "cuisine": "Coffee/Iced Coffee",
+      "location": "Business Administration",
+      "image": "/images/TheBeanCounterVendorImage.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Govinda’s",
+      "cuisine": "Daily Specials",
+      "location": "Rotating Truck",
+      "image": "/images/GovindasVendorImage.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Island Pita",
+      "cuisine": "Pita Sandwiches",
+      "location": "Location TBA",
+      "image": "/images/IslandPitaVendorImage.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Kamitoku Ramen",
+      "cuisine": "Japanese Ramen",
+      "location": "Rotating between POST and Krauss",
+      "image": "/images/KamitokuVendorImage.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Le Crêpe Café",
+      "cuisine": "Savory Crêpes",
+      "location": "Paradise Palms Café",
+      "image": "/images/LeCrepeCafeVendorImage.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Ono Seafood",
+      "cuisine": "Local",
+      "location": "Krauss",
+      "image": "/images/OnoSeafoodVendorImage.jpeg",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "name": "Sistah Truck",
+      "cuisine": "Rotating between POST, Kuykendall, Architecture, Korean Studies, and Kennedy Theatre",
+      "location": "Krauss",
+      "image": "/images/SistahTruckVendorImage.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    }
+  ],
+  "defaultMenu": [
+    {
+      "menuItemName": "Orange Chicken",
+      "menuItemPrice": 10,
+      "menuItemImage": "/images/panda.jpg",
+      "owner": "admin@foo.com"
+    }
   ],
 
   "monti": {

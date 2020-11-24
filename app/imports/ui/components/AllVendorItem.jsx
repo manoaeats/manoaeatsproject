@@ -1,7 +1,8 @@
 import React from 'react';
 import { Image, Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import MenuItemList from './MenuItemList';
 // import AddComment from '/imports/ui/components/AddComment';
 // import Comment from '/imports/ui/components/Comment';
 
@@ -22,8 +23,7 @@ class VendorItem extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-            </a>
+            <Link to={`/menu`}>MENU</Link>
           </Card.Content>
         </Card>
     );
@@ -33,7 +33,12 @@ class VendorItem extends React.Component {
 /** Require a document to be passed to this component. */
 VendorItem.propTypes = {
   vendor: PropTypes.object.isRequired,
-  comments: PropTypes.array.isRequired,
+  // comments: PropTypes.array.isRequired,
+};
+
+MenuItemList.propTypes = {
+  menu: PropTypes.object.isRequired,
+  // comments: PropTypes.array.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

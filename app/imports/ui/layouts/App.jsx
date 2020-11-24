@@ -16,6 +16,9 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import ListAllVendors from '../pages/ListAllVendors';
+import UserHomePage from '../pages/UserHomePage';
+import ListMenu from '../pages/ListMenu';
+import EditMenu from '../pages/EditMenu';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -28,9 +31,12 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
+              <ProtectedRoute path="/home" component={UserHomePage}/>
               <ProtectedRoute path="/list" component={ListVendor}/>
               <ProtectedRoute path="/all" component={ListAllVendors}/>
+              <ProtectedRoute path="/menu" component={ListMenu}/>
               <ProtectedRoute path="/edit/:_id" component={EditVendor}/>
+              <ProtectedRoute path="/editMenu/:_id" component={EditMenu}/>
               <VendorProtectedRoute path="/add" component={AddVendor}/>
               <AdminProtectedRoute path="/addAdmin" component={AddVendor}/>
               <AdminProtectedRoute path="/admin" component={ListVendorAdmin}/>

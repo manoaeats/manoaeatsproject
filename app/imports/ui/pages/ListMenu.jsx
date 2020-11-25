@@ -23,11 +23,12 @@ class ListMenu extends React.Component {
 
     return (
         <Container>
-          <Header style={fontStyle} as="h2" textAlign="center" inverted>{this.props.menus.menuItemName} Menu</Header>
+          <Header style={fontStyle} as="h2" textAlign="center" inverted>Menu</Header>
           <Table celled style={fontStyle}>
             <Table.Header><Table.Row>
               <Table.HeaderCell>Menu</Table.HeaderCell>
               <Table.HeaderCell>Price</Table.HeaderCell>
+              <Table.HeaderCell>Calories</Table.HeaderCell>
               <Table.HeaderCell>Images</Table.HeaderCell>
               <Table.HeaderCell>Edit</Table.HeaderCell>
               <Table.HeaderCell>Remove</Table.HeaderCell>

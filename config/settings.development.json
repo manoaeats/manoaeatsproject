@@ -4,8 +4,8 @@
     { "email": "admin2@foo.com", "password": "changeme", "role": "admin" },
     { "email": "admin3@foo.com", "password": "changeme", "role": "admin" },
     { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "vendor2@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "vendor3@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "panda@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "dunkin@foo.com", "password": "changeme", "role": "vendor" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
@@ -15,7 +15,7 @@
       "cuisine": "Chinese",
       "location": "Paradise Palms Café",
       "image": "/images/pandaVendorImage.png",
-      "owner": "admin@foo.com",
+      "owner": "panda@foo.com",
       "price": "$"
     },
     {
@@ -111,8 +111,16 @@
     {
       "menuItemName": "Orange Chicken",
       "menuItemPrice": 10,
+      "menuItemCalories": 300,
       "menuItemImage": "/images/panda.jpg",
-      "owner": "admin@foo.com"
+      "owner": "panda@foo.com"
+    },
+    {
+      "menuItemName": "ice coffee",
+      "menuItemPrice": 5,
+      "menuItemCalories": 10,
+      "menuItemImage": "/images/panda.jpg",
+      "owner": "dunkin@foo.com"
     }
   ],
 

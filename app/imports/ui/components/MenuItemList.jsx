@@ -16,7 +16,8 @@ class MenuItemList extends React.Component {
     return (
         <Table.Row>
           <Table.Cell>{this.props.menu.menuItemName}</Table.Cell>
-          <Table.Cell>{this.props.menu.menuItemPrice}</Table.Cell>
+          <Table.Cell>$ {this.props.menu.menuItemPrice}</Table.Cell>
+          <Table.Cell>{this.props.menu.menuItemCalories}</Table.Cell>
           <Table.Cell><Image src={this.props.menu.menuItemImage} size='tiny' /></Table.Cell>
           <Table.Cell>
             <Link to={`/editMenu/${this.props.menu._id}`}>Edit</Link>

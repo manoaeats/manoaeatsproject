@@ -13,6 +13,7 @@ class MenusCollection {
     this.schema = new SimpleSchema({
       menuItemName: String,
       menuItemPrice: Number,
+      menuItemCalories: Number,
       menuItemImage: String,
       owner: String,
     }, { tracker: Tracker });

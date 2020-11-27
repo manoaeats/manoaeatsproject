@@ -15,6 +15,7 @@ class MenusCollection {
       menuItemPrice: Number,
       menuItemCalories: Number,
       menuItemImage: String,
+      menuVendorId: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

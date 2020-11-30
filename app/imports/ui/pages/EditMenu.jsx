@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -62,7 +62,7 @@ export default withTracker(({ match }) => {
   const documentId = match.params._id;
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Menus.adminPublicationName);
-  const subscription2 = Meteor.subscribe(Menus.vendorPublicationName)
+  const subscription2 = Meteor.subscribe(Menus.vendorPublicationName);
   return {
     doc: Menus.collection.findOne(documentId),
     ready: subscription.ready() && subscription2.ready(),

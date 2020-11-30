@@ -23,7 +23,7 @@ class VendorItem extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <Link to={`/menu`}>MENU</Link>
+            <Link to={'/menu'}>MENU</Link>
           </Card.Content>
         </Card>
     );

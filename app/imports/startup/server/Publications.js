@@ -59,6 +59,7 @@ Meteor.publish(Vendors.vendorPublicationName, function () {
     }
     return this.ready();
   }
+  return this.ready();
 });
 
 Meteor.publish(Menus.vendorPublicationName, function () {
@@ -69,6 +70,7 @@ Meteor.publish(Menus.vendorPublicationName, function () {
     }
     return this.ready();
   }
+  return this.ready();
 });
 
 // alanning:roles publication

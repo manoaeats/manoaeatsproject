@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Table, Container, Header, Loader, Grid, Icon } from 'semantic-ui-react';
+import { Table, Container, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Menus } from '../../api/menu/Menu';
-import VendorItemAdmin from '../components/VendorItemAdmin';
+// import VendorItemAdmin from '../components/VendorItemAdmin';
 import MenuItemList from '../components/MenuItemList';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -59,4 +59,3 @@ export default withTracker(() => {
     ready: subscription.ready(),
   };
 })(ListMenu);
-

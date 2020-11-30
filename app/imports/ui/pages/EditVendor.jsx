@@ -63,7 +63,7 @@ export default withTracker(({ match }) => {
   const documentId = match.params._id;
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Vendors.adminPublicationName);
-  const subscription2 = Meteor.subscribe(Vendors.vendorPublicationName)
+  const subscription2 = Meteor.subscribe(Vendors.vendorPublicationName);
   return {
     doc: Vendors.collection.findOne(documentId),
     ready: subscription.ready() && subscription2.ready(),

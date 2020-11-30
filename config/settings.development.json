@@ -1,8 +1,9 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "admin2@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "admin3@foo.com", "password": "changeme", "role": "admin" },
+    { "email": "gallego6@hawaii.edu", "password": "alohajerome", "role": "admin" },
+    { "email": "mkraquiz@hawaii.edu", "password": "changeme", "role": "admin" },
+    { "email": "ckguira@hawaii.edu", "password": "changeme", "role": "admin" },
+    { "email": "hany7@hawaii.edu", "password": "changeme", "role": "admin" },
     { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
     { "email": "panda@foo.com", "password": "changeme", "role": "vendor" },
     { "email": "dunkin@foo.com", "password": "changeme", "role": "vendor" },

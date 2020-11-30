@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import { Accounts } from 'meteor/accounts-base';
-import { UserInfo } from '../../api/userinfo/UserInfo'
+import { UserInfo } from '../../api/userinfo/UserInfo';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.

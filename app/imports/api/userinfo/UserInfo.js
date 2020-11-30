@@ -14,7 +14,7 @@ const UserInfoSchema = new SimpleSchema({
   lastName: String,
 }, { tracker: Tracker });
 
-/**attaching the schema to the collection*/
+/** attaching the schema to the collection */
 UserInfo.attachSchema(UserInfoSchema);
 
 /** Making the collection and schema available for use in other files. */

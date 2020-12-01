@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
 import VendorItemAdmin from '../components/VendorItemAdmin';
+import { UserInfo } from '../../api/userinfo/UserInfo';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListVendorAdmin extends React.Component {
@@ -53,6 +54,22 @@ class ListVendorAdmin extends React.Component {
                                                                    Vendors={Vendors}/>)}
             </Table.Body>
           </Table>
+          <Table celled style={fontStyle}>
+            <Table.Header><Table.Row>
+              <Table.HeaderCell>User</Table.HeaderCell>
+              <Table.HeaderCell>First Name</Table.HeaderCell>
+              <Table.HeaderCell>Last Name</Table.HeaderCell>
+
+            </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {this.props.userinfo.map((listuser) => <Table.Row key={listuser._id}>
+                <Table.Cell>{listuser.user}</Table.Cell>
+                <Table.Cell>{listuser.firstName}</Table.Cell>
+                <Table.Cell>{listuser.lastName}</Table.Cell>
+              </Table.Row>) }
+            </Table.Body>
+          </Table>
         </Container>
     );
   }
@@ -61,6 +78,7 @@ class ListVendorAdmin extends React.Component {
 /** Require an array of Stuff documents in the props. */
 ListVendorAdmin.propTypes = {
   vendors: PropTypes.array.isRequired,
+  userinfo: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -68,8 +86,11 @@ ListVendorAdmin.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Vendors.adminPublicationName);
+  const subscription2 = Meteor.subscribe('UserInfo');
+
   return {
+    userinfo: UserInfo.find({}).fetch(),
     vendors: Vendors.collection.find({}).fetch(),
-    ready: subscription.ready(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(ListVendorAdmin);

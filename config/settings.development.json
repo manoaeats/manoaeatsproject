@@ -1,13 +1,15 @@
 {
   "defaultAccounts": [
-    { "email": "gallego6@hawaii.edu", "password": "alohajerome", "role": "admin" },
-    { "email": "mkraquiz@hawaii.edu", "password": "changeme", "role": "admin" },
-    { "email": "ckguira@hawaii.edu", "password": "changeme", "role": "admin" },
-    { "email": "hany7@hawaii.edu", "password": "changeme", "role": "admin" },
-    { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "panda@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "dunkin@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "gallego6@hawaii.edu", "password": "alohajerome",
+      "firstName": "Jerome", "lastName": "Gallego",
+      "role": "admin" },
+    { "email": "mkraquiz@hawaii.edu", "password": "changeme", "firstName": "Marjorie", "lastName": "Raquiz", "role": "admin" },
+    { "email": "ckguira@hawaii.edu", "password": "changeme","firstName": "Christine", "lastName": "Guira","role": "admin" },
+    { "email": "hany7@hawaii.edu", "password": "changeme","firstName": "Yeji", "lastName": "Han", "role": "admin" },
+    { "email": "vendor@foo.com", "password": "changeme","firstName": "Vendor", "lastName": "Inc", "role": "vendor" },
+    { "email": "panda@foo.com", "password": "changeme","firstName": "Panda", "lastName": "Express", "role": "vendor" },
+    { "email": "dunkin@foo.com", "password": "changeme","firstName": "Dunkin", "lastName": "Donuts", "role": "vendor" },
+    { "email": "john@foo.com", "password": "changeme","firstName": "John", "lastName": "Son" }
   ],
 
   "defaultData": [

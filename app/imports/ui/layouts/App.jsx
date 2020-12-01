@@ -17,6 +17,7 @@ import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import ListAllVendors from '../pages/ListAllVendors';
 import UserHomePage from '../pages/UserHomePage';
+import EditUserProfile from '../pages/EditUserProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
               <ProtectedRoute path="/all" component={ListAllVendors}/>
               <ProtectedRoute path="/edit/:_id" component={EditVendor}/>
               <AdminProtectedRoute path="/admin" component={ListVendorAdmin}/>
+              <ProtectedRoute path="/edit/:_id" component={EditUserProfile}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

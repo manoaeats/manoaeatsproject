@@ -36,6 +36,18 @@ class NavBar {
     await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-up');
   }
+
+  /** Pull down login menu, go to List All Vendor page. */
+  async gotoListAllVendorPage(testController) {
+    await testController.click('#navbar-all-vendors');
+    //await testController.click('#login-dropdown-sign-up');
+  }
+
+  /** Pull down login menu, go to List All Vendor page. */
+  async gotoTodayTopPickPage(testController) {
+    await testController.click('#navbar-today-top-pick');
+    //await testController.click('#login-dropdown-sign-up');
+  }
 }
 
 export const navBar = new NavBar();

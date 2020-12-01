@@ -7,7 +7,7 @@ import { UserInfo } from '../../api/userinfo/UserInfo';
 
 function createUser(email, password, firstName, lastName, role) {
   console.log(`  Creating user ${email}.`);
-  UserInfo.insert({ user : email, firstName : firstName , lastName : lastName });
+  UserInfo.insert({ user: email, firstName: firstName, lastName: lastName });
   const userID = Accounts.createUser({
     username: email,
     email: email,

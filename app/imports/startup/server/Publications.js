@@ -74,7 +74,7 @@ Meteor.publish(Menus.vendorPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish("UserInfo", function () {
+Meteor.publish('UserInfo', function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return UserInfo.find();
   }

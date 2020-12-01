@@ -63,11 +63,11 @@ class ListVendorAdmin extends React.Component {
             </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.userinfo.map((listuser) => <Table.Row>
+              {this.props.userinfo.map((listuser) => <Table.Row key={listuser._id}>
                 <Table.Cell>{listuser.user}</Table.Cell>
                 <Table.Cell>{listuser.firstName}</Table.Cell>
                 <Table.Cell>{listuser.lastName}</Table.Cell>
-              </Table.Row> )}
+              </Table.Row>) }
             </Table.Body>
           </Table>
         </Container>
@@ -86,7 +86,7 @@ ListVendorAdmin.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Vendors.adminPublicationName);
-  const subscription2 = Meteor.subscribe("UserInfo");
+  const subscription2 = Meteor.subscribe('UserInfo');
 
   return {
     userinfo: UserInfo.find({}).fetch(),

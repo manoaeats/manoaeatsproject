@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // import Image from 'semantic-ui-react/dist/commonjs/elements/Image';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
@@ -22,8 +22,7 @@ class VendorItem extends React.Component {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <a>
-        </a>
+          <Link to={`/edit/${this.props.vendor._id}`}>Edit</Link>
       </Card.Content>
     </Card>
     );

@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Vendors } from '../../api/vendor/Vendor';
+import { Menus } from '../../api/menu/Menu';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -8,6 +9,14 @@ Meteor.publish(Vendors.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Vendors.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Menus.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Menus.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -21,11 +30,9 @@ Meteor.publish(Vendors.adminPublicationName, function () {
   return this.ready();
 });
 
-// alanning:roles publication
-// Recommended code to publish roles for each user.
-Meteor.publish(null, function () {
-  if (this.userId) {
-    return Meteor.roleAssignment.find({ 'user._id': this.userId });
+Meteor.publish(Menus.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Menus.collection.find();
   }
   return this.ready();
 });
@@ -37,6 +44,37 @@ Meteor.publish(Vendors.allPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Menus.allPublicationName, function () {
+  if (this.userId) {
+    return Menus.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Vendors.vendorPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+      return Vendors.collection.find({ owner: username });
+    }
+    return this.ready();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Menus.vendorPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+      return Menus.collection.find({ owner: username });
+    }
+    return this.ready();
+  }
+  return this.ready();
+});
+
+// alanning:roles publication
+// Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
   if (this.userId) {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });

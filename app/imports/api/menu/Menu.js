@@ -3,24 +3,20 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Encapsulates state and variable values for this collection. */
-class VendorsCollection {
+class MenusCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'VendorsCollection';
+    this.name = 'MenusCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: String,
-      cuisine: String,
-      location: String,
-      image: String,
+      menuItemName: String,
+      menuItemPrice: Number,
+      menuItemCalories: Number,
+      menuItemImage: String,
+      menuVendorId: String,
       owner: String,
-      price: {
-        type: String,
-        allowedValues: ['$', '$$', '$$$'],
-        defaultValue: '$',
-      },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -32,4 +28,4 @@ class VendorsCollection {
   }
 }
 
-export const Vendors = new VendorsCollection();
+export const Menus = new MenusCollection();

@@ -9,11 +9,9 @@ class Footer extends React.Component {
           <footer>
             <div style={divStyle} className="ui center aligned container">
               <hr />
-              <Icon name="facebook f"/>
-              <Icon name="twitter"/>
-              <Icon name="instagram"/><br/>
-              Email: manoaeats@hawaii.edu <br/>
-              Phone: (808) 123-4567<br/>
+              Department of Information and Computer Science<br/>
+              University of Hawaii at Manoa<br/>
+              Honolulu, HI 96822<br/>
             </div>
           </footer>
     );

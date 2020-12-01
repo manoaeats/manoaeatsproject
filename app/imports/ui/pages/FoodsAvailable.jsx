@@ -1,86 +1,44 @@
-import React, { Component } from 'react';
-import { Container, Card, Image, Label, Icon } from 'semantic-ui-react';
+import React from 'react';
+import { Meteor } from 'meteor/meteor';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import { Foods } from '../../api/food/Food';
+import FoodsItemList from '../components/FoodsItemList';
 
-const FoodsAvailable = [
-  {
-    _id: 1,
-    image: 'https://globalassets.starbucks.com/assets/6ab7d70c4fff435faf090a2f1a6f30d5.jpg?impolicy=1by1_wide_1242',
-    title: 'Caramel Frapuccino',
-    location: 'Starbucks',
-    price: '3.75',
-  },
-  {
-    _id: 2,
-    image: 'https://dinnerthendessert.com/wp-content/uploads/2015/07/Mushroom-Middle1.jpg',
-    title: 'Mushroom Chicken',
-    price: '7.50',
-    location: 'Panda Express',
-  },
-  {
-    _id: 3,
-    image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2F1515784604%2F1801w-group-of-doughnuts-1-getty.jpg',
-    title: 'Donut',
-    price: '0.99',
-    location: 'Dunkin Donuts',
-  },
-  {
-    _id: 4,
-    image: 'https://www.hawaiianbarbecue.com/wp-content/uploads/2016/07/Seafood_Combo_BBQ_Chicken-optimized.png',
-    title: 'Seafood Combo',
-    price: '10.75',
-    location: 'L & L Barbeque',
-  },
-  {
-    _id: 5,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO8knqBAra5zz7s6midVb5Z6M2T7cQFM1MLA&usqp=CAU',
-    title: 'Tamales',
-    price: '2.00',
-    location: 'Hot Tacos',
-  },
-  {
-    _id: 6,
-    image: 'https://www.simplyrecipes.com/wp-content/uploads/2009/09/caesar-salad-horiz-a-1800.jpg',
-    title: 'Ceasar Salad',
-    price: '13.00',
-    location: 'Holo Holo',
-  },
-];
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+class FoodsAvailable extends React.Component {
 
-export default class AdsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { ads: [] };
-  }
-
-  componentDidMount() {
-    // For Testing
-    this.setState({
-      ads: FoodsAvailable,
-    });
-  }
-
-  renderItems = () => (
-      <Card.Group itemsPerRow={3} stackable={true} doubling={true}>
-        {this.state.ads.map(card => (
-            <Card key={card._id} className='fluid'>
-              <Image
-                  size='small'
-                  src={card.image}
-                  wrapped
-                  ui={false}
-              />
-              <Card.Content>
-                <Card.Header>{card.title}</Card.Header>
-                <Label attached='bottom right' color='blue'>
-                  <Icon name='dollar'/> {card.price}
-                </Label>
-              </Card.Content>
-            </Card>
-        ))}
-      </Card.Group>
-  );
-
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
-    return <Container>{this.renderItems()}</Container>;
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  /** Render the page once subscriptions have been received. */
+  renderPage() {
+    return (
+        <Container>
+          <Header as="h2" textAlign="center" inverted>FoodsAvailable</Header>
+          <Card.Group>
+            {this.props.foods.map((food) => <FoodsItemList key={food._id} food={food} />)}
+          </Card.Group>
+        </Container>
+    );
   }
 }
+
+/** Require an array of Stuff documents in the props. */
+FoodsAvailable.propTypes = {
+  foods: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Foods.allPublicationName);
+  return {
+    foods: Foods.collection.find({}).fetch(),
+    ready: subscription.ready(),
+  };
+})(FoodsAvailable);

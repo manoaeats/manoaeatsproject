@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Vendors } from '../../api/vendor/Vendor';
 import { Menus } from '../../api/menu/Menu';
+import { UserInfo } from '../../api/userinfo/UserInfo';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -69,6 +70,13 @@ Meteor.publish(Menus.vendorPublicationName, function () {
       return Menus.collection.find({ owner: username });
     }
     return this.ready();
+  }
+  return this.ready();
+});
+
+Meteor.publish("UserInfo", function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return UserInfo.find();
   }
   return this.ready();
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Search, Grid } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Foods } from '../../api/food/Food';
@@ -18,7 +18,12 @@ class FoodsAvailable extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>FoodsAvailable</Header>
+          <Grid container centered stackable columns={1}>
+            <Grid.Column textAlign='center'>
+              <div className={'foods-available'}>Foods Available</div>
+              <Search className={'search-bar1'}></Search>
+            </Grid.Column>
+          </Grid>
           <Card.Group>
             {this.props.foods.map((food) => <FoodsItemList key={food._id} food={food} />)}
           </Card.Group>

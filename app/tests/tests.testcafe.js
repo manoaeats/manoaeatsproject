@@ -73,5 +73,4 @@ test('Test that add vendor page shows up', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAddVendorPage(testController);
   await addVendorPage.isDisplayed(testController);
-  await addVendorPage.hasCard(testController);
 });

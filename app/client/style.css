@@ -51,6 +51,17 @@ body {
   margin-top: 100px;
 }
 
+.foods-available{
+  font-family: 'Niconne', sans-serif;
+  color: white;
+  font-size: 30px;
+  margin-top: 1.5%;
+}
+
+.search-bar1{
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
 
 
 

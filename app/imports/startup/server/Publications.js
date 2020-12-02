@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Vendors } from '../../api/vendor/Vendor';
 import { Menus } from '../../api/menu/Menu';
+import { Foods } from '../../api/food/Food';
 import { UserInfo } from '../../api/userinfo/UserInfo';
 
 // User-level publication.
@@ -74,18 +75,33 @@ Meteor.publish(Menus.vendorPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish('UserInfo', function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return UserInfo.find();
+Meteor.publish(Foods.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Foods.collection.find({ owner: username });
   }
   return this.ready();
 });
 
-// alanning:roles publication
-// Recommended code to publish roles for each user.
-Meteor.publish(null, function () {
+Meteor.publish(Foods.allPublicationName, function () {
   if (this.userId) {
-    return Meteor.roleAssignment.find({ 'user._id': this.userId });
+    return Foods.collection.find();
   }
   return this.ready();
 });
+
+  Meteor.publish('UserInfo', function () {
+    if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+      return UserInfo.find();
+    }
+    return this.ready();
+  });
+
+// alanning:roles publication
+// Recommended code to publish roles for each user.
+  Meteor.publish(null, function () {
+    if (this.userId) {
+      return Meteor.roleAssignment.find({ 'user._id': this.userId });
+    }
+    return this.ready();
+  });

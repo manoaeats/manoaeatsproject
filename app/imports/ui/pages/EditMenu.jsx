@@ -15,8 +15,8 @@ class EditMenu extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { menuItemName, menuItemPrice, menuItemCalories, menuItemImage, _id } = data;
-    Menus.collection.update(_id, { $set: { menuItemName, menuItemPrice, menuItemCalories, menuItemImage } }, (error) => (error ?
+    const { menuItemName, menuItemPrice, menuItemCalories, menuDescription, menuItemImage, _id } = data;
+    Menus.collection.update(_id, { $set: { menuItemName, menuItemPrice, menuItemCalories, menuDescription, menuItemImage } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Vendor updated successfully', 'success')));
   }
@@ -37,6 +37,7 @@ class EditMenu extends React.Component {
                 <TextField name='menuItemName'/>
                 <TextField name='menuItemPrice'/>
                 <TextField name='menuItemCalories'/>
+                <TextField name='menuDescription'/>
                 <TextField name='menuItemImage'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

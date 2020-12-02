@@ -120,24 +120,178 @@
       "image": "/images/SistahTruckVendorImage.png",
       "owner": "vendor@foo.com",
       "price": "$"
+    },
+    {
+      "_id": "13",
+      "name": "Subway",
+      "cuisine": "American Fast Food",
+      "location": "Campus Center",
+      "image": "https://www.subway.com/-/media/Base_English/Images/Branding/subway-logo-new-1200x630.png",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "_id": "14",
+      "name": "Ba-Le",
+      "cuisine": "Sandwiches, Vietnamese",
+      "location": "Hemenway",
+      "image": "https://pbs.twimg.com/profile_images/3194446375/bacbc1fc3c8f0127775bb439d78fb4c0.jpeg",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "_id": "15",
+      "name": "Starbucks",
+      "cuisine": "Coffee",
+      "location": "Campus Center",
+      "image": "https://i.pinimg.com/280x280_RS/8f/96/6c/8f966cf7eb441261f1e280274bf8a727.jpg",
+      "owner": "vendor@foo.com",
+      "price": "$"
+    },
+    {
+      "_id": "16",
+      "name": "Jamba Juice",
+      "cuisine": "Smoothies, Juice",
+      "location": "Campus Center",
+      "image": "https://mma.prnewswire.com/media/663013/Jamba_Juice_Logo.jpg?p=facebook",
+      "owner": "vendor@foo.com",
+      "price": "$"
     }
   ],
   "defaultMenu": [
     {
+      "menuVendorName": "Panda Express",
       "menuItemName": "Orange Chicken",
-      "menuItemPrice": 10,
-      "menuItemCalories": 300,
-      "menuItemImage": "/images/panda.jpg",
+      "menuItemPrice": 10.20,
+      "menuItemCalories": 490,
+      "menuItemImage": "https://i1.wp.com/clarkdeals.com/wp-content/uploads/2018/10/orange_chicken.jpg?fit=977%2C430&ssl=1",
       "menuVendorId": "1",
+      "menuDescription": "later",
       "owner": "panda@foo.com"
     },
     {
-      "menuItemName": "iced coffee",
-      "menuItemPrice": 5,
-      "menuItemCalories": 10,
+      "menuVendorName": "Dunkin’",
+      "menuItemName": "Iced Coffee",
+      "menuItemPrice": 2.49,
+      "menuItemCalories": 15,
       "menuItemImage": "https://target.scene7.com/is/image/Target/GUEST_11cd729a-7012-41f7-8831-3a53ea8479f5?wid=488&hei=488&fmt=pjpeg",
-      "menuVendorId": "2",
+      "menuVendorId": "4",
+      "menuDescription": "later",
       "owner": "dunkin@foo.com"
+    },
+    {
+      "menuVendorName": "Dunkin’",
+      "menuItemName": "Donuts",
+      "menuItemPrice": 0.99,
+      "menuItemCalories": 270,
+      "menuItemImage": "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/donuts/VanillaFrostedSprinklesDonut_570x570.png",
+      "menuVendorId": "4",
+      "menuDescription": "Comes in a variety of flavors and are free of artificial dyes.",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "menuVendorName": "Starbucks",
+      "menuItemName": "Caramel Frapuccino",
+      "menuItemPrice": 5.49,
+      "menuItemCalories": 370,
+      "menuItemImage": "https://vignette.wikia.nocookie.net/starbuckscoffee/images/7/79/Caramelfrappe.jpg/revision/latest/scale-to-width-down/340?cb=20140522012804",
+      "menuVendorId": "15",
+      "menuDescription": "Caramel syrup meets coffee, milk and ice for a rendezvous in the blender, while whipped cream and buttery caramel sauce layer the love on top.",
+      "owner": "vendor@foo.com"
+    },
+    {
+      "menuVendorName": "Starbucks",
+      "menuItemName": "BlueberryScone",
+      "menuItemPrice": 3.59,
+      "menuItemCalories": 380,
+      "menuItemImage": "https://www.aubonpain.com/Assets/320x240blueberryscone.jpg",
+      "menuVendorId": "15",
+      "menuDescription": "A traditional scone with blueberries, buttermilk and lemon lovingly handmade to remind you of everything wholesome.",
+      "owner": "vendor@foo.com"
+    },
+    {
+      "menuVendorName": "Starbucks",
+      "menuItemName": "Java Chip Frapuccino",
+      "menuItemPrice": 5.49,
+      "menuItemCalories": 440,
+      "menuItemImage": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/media/images/ext/492552118/starbucks-java-chip-frappuccino-md.jpg?ssl=1",
+      "menuVendorId": "15",
+      "menuDescription": "Blended mocha sauce and Frappuccino chips with coffee, milk and ice, then top it off with whipped cream and a mocha drizzle.",
+      "owner": "vendor@foo.com"
+    },
+    {
+      "menuVendorName": "Jamba Juice",
+      "menuItemName": "Strawberries Wild",
+      "menuItemPrice": 5.89,
+      "menuItemCalories": 340,
+      "menuItemImage": "https://images.summitmedia-digital.com/spotph/images/2020/02/26/swild-1582686054.jpg",
+      "menuVendorId": "16",
+      "menuDescription": "Apple Strawberry Juice Blend, Nonfat Frozen Yogurt (Contains Milk), Strawberries, Bananas",
+      "owner": "vendor@foo.com"
+    },
+    {
+      "menuVendorName": "Jamba Juice",
+      "menuItemName": "Orange C-Booster",
+      "menuItemPrice": 5.89,
+      "menuItemCalories": 330,
+      "menuItemImage": "https://i.pinimg.com/originals/40/9f/13/409f1353ae0f78556a2ea7aa97712fb2.jpg",
+      "menuVendorId": "16",
+      "menuDescription": "Orange Juice, Orange Sherbet (Contains Milk), Peaches, Bananas, Zinc & Antioxidant boost",
+      "owner": "vendor@foo.com"
+    },
+    {
+      "menuVendorName": "Jamba Juice",
+      "menuItemName": "Pitaya Primo Bowl",
+      "menuItemPrice": 7.99,
+      "menuItemCalories": 470,
+      "menuItemImage": "https://cdn.jamba.com/-/media/jamba/menu/bowl-islandpitaya-card.png?v=1&d=20190918T200650Z",
+      "menuVendorId": "16",
+      "menuDescription": "Pitaya, mango, passionfruit, pineapple sherbet, organic granola, banana, coconut",
+      "owner": "vendor@foo.com"
+    }
+  ],
+  "defaultFood": [
+    {
+      "_id": "1",
+      "image": "https://globalassets.starbucks.com/assets/6ab7d70c4fff435faf090a2f1a6f30d5.jpg?impolicy=1by1_wide_1242",
+      "title": "Caramel Frapuccino",
+      "price": "3.75",
+      "location": "Starbucks"
+    },
+    {
+      "_id": "2",
+      "image": "https://dinnerthendessert.com/wp-content/uploads/2015/07/Mushroom-Middle1.jpg",
+      "title": "Mushroom Chicken",
+      "price": "7.50",
+      "location": "Panda Express"
+    },
+    {
+      "_id": "3",
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2F1515784604%2F1801w-group-of-doughnuts-1-getty.jpg",
+      "title": "Donut",
+      "price": "0.99",
+      "location": "Dunkin Donuts"
+    },
+    {
+      "_id": "4",
+      "image": "https://www.hawaiianbarbecue.com/wp-content/uploads/2016/07/Seafood_Combo_BBQ_Chicken-optimized.png",
+      "title": "Seafood Combo",
+      "price": "10.75",
+      "location": "L & L Barbeque"
+    },
+    {
+      "_id": "5",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO8knqBAra5zz7s6midVb5Z6M2T7cQFM1MLA&usqp=CAU",
+      "title": "Tamales",
+      "price": "2.00",
+      "location": "Hot Tacos"
+    },
+    {
+      "_id": "6",
+      "image": "https://www.simplyrecipes.com/wp-content/uploads/2009/09/caesar-salad-horiz-a-1800.jpg",
+      "title": "Ceasar Salad",
+      "price": "13.00",
+      "location": "Holo Holo"
     }
   ],
 

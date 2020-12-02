@@ -11,11 +11,13 @@ class MenusCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
+      menuVendorName: String,
       menuItemName: String,
       menuItemPrice: Number,
       menuItemCalories: Number,
       menuItemImage: String,
       menuVendorId: String,
+      menuDescription: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

@@ -21,7 +21,7 @@ if (Vendors.collection.find().count() === 0) {
 
 /** Initialize the database with a default data document. */
 function addMenu(data) {
-  console.log(` Adding: ${data.menuItemName} (${data.owner})`);
+  console.log(` Adding: ${data.menuVendorName} (${data.owner})`);
   Menus.collection.insert(data);
 }
 

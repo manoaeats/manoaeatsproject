@@ -29,6 +29,7 @@ class ListMenu extends React.Component {
               <Table.HeaderCell>Menu</Table.HeaderCell>
               <Table.HeaderCell>Price</Table.HeaderCell>
               <Table.HeaderCell>Calories</Table.HeaderCell>
+              <Table.HeaderCell>Description</Table.HeaderCell>
               <Table.HeaderCell>Images</Table.HeaderCell>
               <Table.HeaderCell>Edit</Table.HeaderCell>
               <Table.HeaderCell>Remove</Table.HeaderCell>

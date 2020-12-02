@@ -5,7 +5,7 @@ import { Grid, Search } from 'semantic-ui-react';
 class UserHomePage extends React.Component {
   render() {
     return (
-        <div className="manoaeats-UserHomePage-background">
+        <div id="userhome-page" className="manoaeats-UserHomePage-background">
           <Grid container centered stackable columns={1}>
             <Grid.Column textAlign='center'>
               <div className={'user-home'}>Aloha!</div>

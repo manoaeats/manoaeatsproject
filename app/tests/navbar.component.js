@@ -40,13 +40,31 @@ class NavBar {
   /** Pull down login menu, go to List All Vendor page. */
   async gotoListAllVendorPage(testController) {
     await testController.click('#navbar-all-vendors');
-    //await testController.click('#login-dropdown-sign-up');
+    // await testController.click('#login-dropdown-sign-up');
   }
 
-  /** Pull down login menu, go to List All Vendor page. */
+  /** Pull down login menu, go to Today Top Pick page. */
   async gotoTodayTopPickPage(testController) {
     await testController.click('#navbar-today-top-pick');
-    //await testController.click('#login-dropdown-sign-up');
+    // await testController.click('#login-dropdown-sign-up');
+  }
+
+  /** Pull down login menu, go to List Vendor Admin page. */
+  async gotoListVendorAdminPage(testController) {
+    await testController.click('#navbar-admin');
+    // await testController.click('#login-dropdown-sign-up');
+  }
+
+  /** Pull down login menu, go to List Vendor page. */
+  async gotoListVendorPage(testController) {
+    await testController.click('#navbar-my-vendor');
+    // await testController.click('#login-dropdown-sign-up');
+  }
+
+  /** Pull down login menu, go to Add Vendor page. */
+  async gotoAddVendorPage(testController) {
+    await testController.click('#navbar-admin-add-vendor');
+    // await testController.click('#login-dropdown-sign-up');
   }
 }
 

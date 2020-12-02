@@ -2,8 +2,12 @@ import { landingPage } from './landing.page';
 import { signinPage } from './signin.page';
 import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
+import { userHomePage } from './userhomepage.page';
 import { listAllVendorsPage } from './listallvendors.page';
 import { todayTopPickPage } from './todaytoppick.page';
+import { listVendorAdminPage } from './listvendoradmin.page';
+import { listVendorPage } from './listvendor.page';
+import { addVendorPage } from './addvendor.page';
 
 /* global fixture:false, test:false */
 
@@ -25,7 +29,13 @@ test('Test that signin and signout work', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Test that list all vendors page', async (testController) => {
+test('Test that user home page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await userHomePage.isDisplayed(testController);
+});
+
+test('Test that list all vendors page shows up', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListAllVendorPage(testController);
@@ -33,10 +43,34 @@ test('Test that list all vendors page', async (testController) => {
   await listAllVendorsPage.hasCard(testController);
 });
 
-test('Test that today top pick page', async (testController) => {
+test('Test that today top pick page shows up', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoTodayTopPickPage(testController);
   await todayTopPickPage.isDisplayed(testController);
   await todayTopPickPage.hasCard(testController);
+});
+
+test('Test that list vendor admin page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoListVendorAdminPage(testController);
+  await listVendorAdminPage.isDisplayed(testController);
+  await listVendorAdminPage.hasCard(testController);
+});
+
+test('Test that list vendor page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoListVendorPage(testController);
+  await listVendorPage.isDisplayed(testController);
+  await listVendorPage.hasCard(testController);
+});
+
+test('Test that add vendor page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoAddVendorPage(testController);
+  await addVendorPage.isDisplayed(testController);
+  await addVendorPage.hasCard(testController);
 });

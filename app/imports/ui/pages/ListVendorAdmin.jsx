@@ -22,7 +22,7 @@ class ListVendorAdmin extends React.Component {
     };
 
     return (
-        <Container>
+        <Container id='admin-listvendor-page'>
           <Header style={fontStyle} as="h2" textAlign="center" inverted>Admin</Header>
           <Grid container centered stackable columns={2}>
             <Grid.Column textAlign='center'>

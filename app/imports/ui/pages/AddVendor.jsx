@@ -44,7 +44,7 @@ class AddVendor extends React.Component {
   render() {
     let fRef = null;
     return (
-        <Grid container centered>
+        <Grid id='addvendor-page' container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Add Vendor</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >

@@ -12,7 +12,8 @@ import { addVendorPage } from './addvendor.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
-const credentials = { username: 'gallego6@hawaii.edu', password: 'alohajerome' };
+const credentials = { username: 'gallego6@hawaii.edu', password: 'alohajerome', name: 'Panda Express',
+                      cuisine: 'Chinese', location: 'Paradise Palms Café', image: '/images/pandaVendorImage.png', price: '$' };
 
 fixture('meteor-application-template-react localhost test with default db')
     .page('http://localhost:3000');

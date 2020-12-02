@@ -49,12 +49,12 @@ class AddVendor extends React.Component {
             <Header as="h2" textAlign="center" inverted>Add Vendor</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
-                <TextField name='name'/>
-                <TextField name='cuisine'/>
-                <TextField name='location'/>
-                <TextField name='image'/>
-                <SelectField name='price'/>
-                <SubmitField value='Submit'/>
+                <TextField id='add-vendor-form-name' name='name'/>
+                <TextField id='add-vendor-form-cuisine' name='cuisine'/>
+                <TextField id='add-vendor-form-location' name='location'/>
+                <TextField id='add-vendor-form-image' name='image'/>
+                <SelectField id='add-vendor-form-price' name='price'/>
+                <SubmitField id='add-vendor-form-submit' value='Submit'/>
                 <ErrorsField/>
               </Segment>
             </AutoForm>

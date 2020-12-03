@@ -3,8 +3,8 @@ import { Image, Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import MenuItemList from './MenuItemList';
-// import AddComment from '/imports/ui/components/AddComment';
-// import Comment from '/imports/ui/components/Comment';
+import AddComment from '/imports/ui/components/AddComment';
+import Comment from '/imports/ui/components/Comment';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class VendorItem extends React.Component {
@@ -25,6 +25,12 @@ class VendorItem extends React.Component {
           <Card.Content extra>
             <Link to={'/menu'}>MENU</Link>
           </Card.Content>
+          <Card.Content extra>
+            {this.props.comments.map((comment, index) => <Comment key={index} comment={comment}/>)}
+          </Card.Content>
+          <Card.Content extra>
+            <AddComment owner={this.props.vendor.owner} vendorId={this.props.vendor._id}/>
+          </Card.Content>
         </Card>
     );
   }
@@ -33,7 +39,7 @@ class VendorItem extends React.Component {
 /** Require a document to be passed to this component. */
 VendorItem.propTypes = {
   vendor: PropTypes.object.isRequired,
-  // comments: PropTypes.array.isRequired,
+  comments: PropTypes.array.isRequired,
 };
 
 MenuItemList.propTypes = {

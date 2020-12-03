@@ -3,29 +3,27 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Encapsulates state and variable values for this collection. */
-class ReviewsCollection {
+class CommentsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ReviewsCollection';
+    this.name = 'CommentsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      review: String,
-      user: String,
-      avg: {
-        type: Number,
-        allowedValues: [1, 2, 3, 4, 5],
-        defaultValue: 3,
-      },
+      comment: String,
+      vendorId: String,
+      createdAt: Date,
+      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
-
+    this.vendorPublicationName = `${this.name}.publication.vendor`;
+    this.allPublicationName = `${this.name}.publication.temp`;
   }
 }
 
-export const Reviews = new ReviewsCollection();
+export const Comments = new CommentsCollection();

@@ -12,6 +12,7 @@ class CommentsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       comment: String,
+      rating: Number,
       vendorId: String,
       createdAt: Date,
       owner: String,

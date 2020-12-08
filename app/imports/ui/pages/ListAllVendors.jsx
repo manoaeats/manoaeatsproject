@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
 import AllVendorItem from '../components/AllVendorItem';
 import { Comments } from '../../api/comment/Comment';
+// import VendorItemAdmin from '../components/VendorItemAdmin';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListAllVendors extends React.Component {
@@ -31,8 +32,8 @@ class ListAllVendors extends React.Component {
 /** Require an array of Stuff documents in the props. */
 ListAllVendors.propTypes = {
   vendors: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired,
   comments: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */

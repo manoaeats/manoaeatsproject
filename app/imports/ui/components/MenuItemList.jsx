@@ -35,7 +35,7 @@ class MenuItemList extends React.Component {
 /** Require a document to be passed to this component. */
 MenuItemList.propTypes = {
   menu: PropTypes.object.isRequired,
-  // vendor: PropTypes.object.isRequired,
+  vendor: PropTypes.object.isRequired,
   Menus: PropTypes.object.isRequired,
 };
 

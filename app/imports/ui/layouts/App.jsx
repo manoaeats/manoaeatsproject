@@ -8,6 +8,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListVendor from '../pages/ListVendor';
+import UserProfile from '../pages/UserProfile';
 import ListVendorAdmin from '../pages/ListVendorAdmin';
 import AddVendor from '../pages/AddVendor';
 import EditVendor from '../pages/EditVendor';
@@ -35,6 +36,7 @@ class App extends React.Component {
               <ProtectedRoute path="/home" component={UserHomePage}/>
               <ProtectedRoute path="/food" component={FoodsAvailable}/>
               <ProtectedRoute path="/list" component={ListVendor}/>
+              <ProtectedRoute path="/list" component={UserProfile}/>
               <ProtectedRoute path="/add" component={AddVendor}/>
               <ProtectedRoute path="/all" component={ListAllVendors}/>
               <ProtectedRoute path="/menu" component={ListMenu}/>

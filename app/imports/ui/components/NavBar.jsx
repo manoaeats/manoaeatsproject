@@ -11,6 +11,7 @@ class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px' };
     return (
+<<<<<<< HEAD
         <Menu style={menuStyle} attached="top" borderless inverted className="navigatorbar">
           <Menu.Item as={NavLink} activeClassName="active" exact to="/home">
             <Header inverted as='h1'>Manoa Eats</Header>
@@ -23,6 +24,21 @@ class NavBar extends React.Component {
                 <Menu.Item id="navbar-my-vendor" as={NavLink} activeClassName="active" exact to="/list" key='list'>My
                   Vendor</Menu.Item>,
                 <Menu.Item id="foods-availble" as={NavLink} activeClassName="active" exact to="/food" key="food">Foods Available</Menu.Item>]
+=======
+      <Menu style={menuStyle} attached="top" borderless inverted className="navigatorbar">
+        <Menu.Item as={NavLink} activeClassName="active" exact to="/home">
+          <Header inverted as='h1'>Manoa Eats</Header>
+        </Menu.Item>
+        {this.props.currentUser ? (
+            [<Menu.Item id="navbar-all-vendors" as={NavLink} activeClassName="active" exact to="/all" key='all'>All Vendors</Menu.Item>,
+            <Menu.Item id="navbar-today-top-pick" as={NavLink} activeClassName="active" exact to="/pick" key='pick'>Today&apos;s Top Pick</Menu.Item>,
+              <Menu.Item id="navbar-foods-available-rightnow" as={NavLink} activeClassName="active" exact to="/food" key='pick'>Foods Available</Menu.Item>,
+              <Menu.Item id="navbar-my-vendor" as={NavLink} activeClassName="active" exact to="/list" key='list'>My Vendor</Menu.Item>]
+        ) : ''}
+        {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            [<Menu.Item id="navbar-admin" as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>,
+            <Menu.Item id="navbar-admin-add-vendor" as={NavLink} activeClassName="active" exact to="/addAdmin" key='addAdmin'>Add Vendor</Menu.Item>]
+>>>>>>> master
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               [<Menu.Item id="navbar-admin" as={NavLink} activeClassName="active" exact to="/admin"

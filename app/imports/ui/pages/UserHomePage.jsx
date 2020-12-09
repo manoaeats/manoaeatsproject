@@ -1,16 +1,16 @@
 import React from 'react';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
-import { Grid, Header, Search, Segment, Card, Container, Loader } from 'semantic-ui-react';
-import { UserInfo } from '../../api/userinfo/UserInfo';
-import { Vendors } from '../../api/vendor/Vendor';
+import { Grid, Header, Segment, Card, Loader } from 'semantic-ui-react';
+// import { UserInfo } from '../../api/userinfo/UserInfo';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema from 'simpl-schema';
 import { _ } from 'meteor/underscore';
-import MultiSelectField from '../forms/controllers/MultiSelectField';
 import { AutoForm, SubmitField } from 'uniforms-semantic';
+import { Vendors } from '../../api/vendor/Vendor';
 import VendorItem from '../components/VendorItem';
+import MultiSelectField from '../forms/controllers/MultiSelectField';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const makeSchema = (allCuisines) => new SimpleSchema({
@@ -47,7 +47,7 @@ class UserHomePage extends React.Component {
     console.log(allCuisines);
     const formSchema = makeSchema(allCuisines);
     const bridge = new SimpleSchema2Bridge(formSchema);
-    /**const userData = _.uniq(emails).map(email => getData(email));*/
+    /** const userData = _.uniq(emails).map(email => getData(email)); */
     const vendors = Vendors.collection.find({ cuisine: { $in: this.state.cuisines } }).fetch();
     return (
         <div>
@@ -89,8 +89,7 @@ class UserHomePage extends React.Component {
           </div>
         </div>
 
-    )
-        ;
+    );
   }
 }
 
@@ -99,9 +98,9 @@ UserHomePage.propTypes = {
 };
 
 export default withTracker(() => {
-  const sub1 = Meteor.subscribe("UserInfo");
+  // const sub1 = Meteor.subscribe("UserInfo");
   const sub2 = Meteor.subscribe(Vendors.allPublicationName);
   return {
-    ready: sub1.ready() && sub2.ready(),
+    ready: sub2.ready(),
   };
 })(UserHomePage);

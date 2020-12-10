@@ -21,7 +21,7 @@ class MenuItemList extends React.Component {
           <Table.Cell>{this.props.menu.menuDescription}</Table.Cell>
           <Table.Cell><Image src={this.props.menu.menuItemImage} size='tiny' /></Table.Cell>
           <Table.Cell>
-            <Link to={`/editMenu/${this.props.menu._id}`}>Edit</Link>
+            <Link to={`/edit2/${this.props.menu._id}`}>Edit</Link>
           </Table.Cell>
           <Table.Cell>
             <Button icon onClick={() => this.removeItem(this.props.menu._id)}><Icon name='trash'/>
@@ -35,7 +35,7 @@ class MenuItemList extends React.Component {
 /** Require a document to be passed to this component. */
 MenuItemList.propTypes = {
   menu: PropTypes.object.isRequired,
-  vendor: PropTypes.object.isRequired,
+  // vendor: PropTypes.object.isRequired,
   Menus: PropTypes.object.isRequired,
 };
 

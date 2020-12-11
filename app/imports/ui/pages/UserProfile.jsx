@@ -1,10 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Stuffs } from '../../api/stuff/Stuff';
-import StuffItem from '../components/StuffItem';
+import { UserInfo } from '../../api/userinfo/UserInfo';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class UserProfile
@@ -18,8 +17,8 @@ class UserProfile
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container id='liststuff-page'>
-          <Header as="h2" textAlign="center" inverted>User Profile</Header>
+        <Container id='userprofile-page'>
+          <Header as="h2" textAlign="center" inverted>My Profile</Header>
         </Container>
     );
   }
@@ -28,16 +27,16 @@ class UserProfile
 /** Require an array of Stuff documents in the props. */
 UserProfile
     .propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  users: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Stuffs.userPublicationName);
+  const subscription = Meteor.subscribe(UserInfo.userPublicationName);
   return {
-    stuffs: Stuffs.collection.find({}).fetch(),
+    users: UserInfo.collection.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(UserProfile);

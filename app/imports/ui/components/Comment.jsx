@@ -6,11 +6,13 @@ import { withRouter } from 'react-router-dom';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Comment extends React.Component {
 
-   deleteComment(docID) {
+  /*
+   removeComment(docID) {
     // eslint-disable-next-line no-console
     console.log(`item to delete is: ${docID}`);
-    this.props.Comment.collection.remove(docID);
+    this.props.Comments.collection.remove(docID);
   }
+   */
 
   render() {
     return (
@@ -22,8 +24,8 @@ class Comment extends React.Component {
               {this.props.comment.comment}
               <br></br>
               <Rating defaultRating={this.props.comment.rating} maxRating={5} disabled />
-              <br></br>
-              <Button icon onClick={() => this.deleteComment(this.props.comment._id)} size='mini'>Delete</Button>
+              { /* <br></br>
+                <Button icon onClick={() => this.removeComment(this.props.comment._id)} size='mini'>Delete</Button> */ }
             </Feed.Summary>
           </Feed.Content>
         </Feed.Event>
@@ -34,7 +36,7 @@ class Comment extends React.Component {
 /** Require a document to be passed to this component. */
 Comment.propTypes = {
   comment: PropTypes.object.isRequired,
-  Comment: PropTypes.object.isRequired,
+  // Comments: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

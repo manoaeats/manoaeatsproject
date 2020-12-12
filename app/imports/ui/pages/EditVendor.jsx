@@ -15,8 +15,8 @@ class EditVendor extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, cuisine, location, image, price, _id } = data;
-    Vendors.collection.update(_id, { $set: { name, cuisine, location, image, price } }, (error) => (error ?
+    const { name, cuisine, location, image, website, price, _id } = data;
+    Vendors.collection.update(_id, { $set: { name, cuisine, location, image, website, price } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Vendor updated successfully', 'success')));
   }
@@ -38,6 +38,7 @@ class EditVendor extends React.Component {
                 <TextField name='cuisine'/>
                 <TextField name='location'/>
                 <TextField name='image'/>
+                <TextField name='website'/>
                 <SelectField name='price'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

@@ -22,9 +22,9 @@ class VendorItem extends React.Component {
               Location: {this.props.vendor.location}
             </Card.Description>
           </Card.Content>
-          <Card.Content extra>
-            <Link to={'/menu'}>MENU</Link>
-          </Card.Content>
+          <Card.Header textAlign='center'>
+            <a href={this.props.vendor.website} target="_blank">{this.props.vendor.name} Details</a>
+          </Card.Header>
           <Card.Content extra>
             {this.props.comments.map((comment, index) => <Comment key={index} comment={comment}/>)}
           </Card.Content>

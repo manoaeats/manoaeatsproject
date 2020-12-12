@@ -37,8 +37,9 @@ class ListMenu extends React.Component {
             </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.menus.map((menu) => <MenuItemList key={menu._id} menu={menu}
-                                                            Menus={Menus}/>)}
+              {this.props.menus.map((menu, index) => <MenuItemList
+                  key={index}
+                  menu={this.props.filter(Vendors._id === Menus.menuVendorId)}/>)}
             </Table.Body>
           </Table>
         </Container>
@@ -54,13 +55,13 @@ ListMenu.propTypes = {
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-export default withTracker(() => {
-  // Get access to Stuff documents.
+export default withTracker(({ match }) => {
+  const _id = match.params._id;
   const subscription = Meteor.subscribe(Menus.allPublicationName);
   const subscription2 = Meteor.subscribe(Vendors.allPublicationName);
   return {
-    menus: Menus.collection.find({}).fetch(),
-    vendors: Vendors.collection.find({}).fetch(),
+    vendors: Vendors.collection.find(_id).fetch(),
+    menus: Menus.collection.find({ menuVendorId: _id }).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
 })(ListMenu);

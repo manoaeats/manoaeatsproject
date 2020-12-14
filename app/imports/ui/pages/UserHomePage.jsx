@@ -56,7 +56,7 @@ class UserHomePage extends React.Component {
               <Grid.Column textAlign='center'>
                 <div className={'user-home'}>Aloha!</div>
               </Grid.Column></Grid>
-            <div className={'three-columns'}>
+            <div className={'three-paragraphs'}>
               <Grid container centered stackable columns={3}>
                 <Grid.Column textAlign='center'>
                   <Header as='h2'>All Vendors</Header>

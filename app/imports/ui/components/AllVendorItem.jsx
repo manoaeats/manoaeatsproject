@@ -13,7 +13,7 @@ class VendorItem extends React.Component {
         <Card centered>
           <Image src={this.props.vendor.image} wrapped ui={false} />
           <Card.Content>
-            <Card.Header>{this.props.vendor.name}</Card.Header>
+            <Card.Header as='h2' textAlign='center'>{this.props.vendor.name}</Card.Header>
             <Card.Header>{this.props.vendor.price}</Card.Header>
             <Card.Meta>
               <span className='date'>{this.props.vendor.cuisine}</span>

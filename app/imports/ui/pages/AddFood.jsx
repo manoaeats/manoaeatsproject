@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -12,11 +12,7 @@ const formSchema = new SimpleSchema({
   title: String,
   location: String,
   image: String,
-  price: {
-    type: String,
-    allowedValues: ['$', '$$', '$$$'],
-    defaultValue: '$',
-  },
+  price: Number,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -26,9 +22,9 @@ class AddFood extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { image, price, location } = data;
+    const { title, image, price, location } = data;
     const owner = Meteor.user().username;
-    Foods.collection.insert({ location, image, price, owner },
+    Foods.collection.insert({ title, location, image, price, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -51,7 +47,7 @@ class AddFood extends React.Component {
                 <TextField id='add-food-form-title' name='title'/>
                 <TextField id='add-food-form-image' name='image'/>
                 <TextField id='add-food-form-location' name='location'/>
-                <SelectField id='add-food-form-price' name='price'/>
+                <TextField id='add-food-form-price' name='price'/>
                 <SubmitField id='add-food-form-submit' value='Submit'/>
                 <ErrorsField/>
               </Segment>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import MenuItemList from './MenuItemList';
 import AddComment from '/imports/ui/components/AddComment';
 import Comment from '/imports/ui/components/Comment';
@@ -23,7 +23,7 @@ class VendorItem extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Header textAlign='center'>
-            <a href={this.props.vendor.website} target="_blank">{this.props.vendor.name} Details</a>
+            <a href={this.props.vendor.website} target="_blank" rel="noreferrer">{this.props.vendor.name} Details</a>
           </Card.Header>
           <Card.Content extra>
             {this.props.comments.map((comment, index) => <Comment key={index} comment={comment}/>)}

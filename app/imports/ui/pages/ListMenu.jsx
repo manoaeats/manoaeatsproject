@@ -37,9 +37,10 @@ class ListMenu extends React.Component {
             </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.menus.map((menu, index) => <MenuItemList
+              <MenuItemList></MenuItemList>
+              { /* {this.props.menus.map((menu, index) => <MenuItemList
                   key={index}
-                  menu={this.props.filter(Vendors._id === Menus.menuVendorId)}/>)}
+                  menu={this.props.filter(Vendors._id === Menus.menuVendorId)}/>)} */ }
             </Table.Body>
           </Table>
         </Container>

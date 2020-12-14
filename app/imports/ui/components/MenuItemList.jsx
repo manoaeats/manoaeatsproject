@@ -2,7 +2,6 @@ import React from 'react';
 import { Image, Table, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
-import { Vendors } from '../../api/vendor/Vendor';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 class MenuItemList extends React.Component {

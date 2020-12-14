@@ -20,6 +20,7 @@ import UserHomePage from '../pages/UserHomePage';
 import FoodsAvailable from '../pages/FoodsAvailable';
 import ListMenu from '../pages/ListMenu';
 import TodayTopPick from '../pages/TodayTopPick';
+import AddFood from '../pages/AddFood';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
               <ProtectedRoute path="/food" component={FoodsAvailable}/>
               <ProtectedRoute path="/list" component={ListVendor}/>
               <ProtectedRoute path="/add" component={AddVendor}/>
+              <ProtectedRoute path="/add" component={AddFood}/>
               <ProtectedRoute path="/all" component={ListAllVendors}/>
               <ProtectedRoute path="/menu" component={ListMenu}/>
               <ProtectedRoute path="/pick" component={TodayTopPick}/>

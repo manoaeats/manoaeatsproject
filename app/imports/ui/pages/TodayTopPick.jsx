@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
 import AllVendorItem from '../components/AllVendorItem';
+import { Comments } from '../../api/comment/Comment';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class TodayTopPick extends React.Component {
@@ -20,7 +21,7 @@ class TodayTopPick extends React.Component {
         <Container id='todaytoppick-page'>
           <Header as="h2" textAlign="center" inverted>Today Top Pick</Header>
           <Card.Group>
-              {this.props.vendors.map((vendor) => <AllVendorItem key={vendor._id} vendor={vendor} />)}
+            {this.props.vendors.map((vendor) => <AllVendorItem key={vendor._id} vendor={vendor} comments={this.props.comments.filter(comment => (comment.vendorId === vendor._id))}/>)}
             </Card.Group>
         </Container>
     );
@@ -30,6 +31,7 @@ class TodayTopPick extends React.Component {
 /** Require an array of Stuff documents in the props. */
 TodayTopPick.propTypes = {
   vendors: PropTypes.array.isRequired,
+  comments: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -37,8 +39,10 @@ TodayTopPick.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Vendors.allPublicationName);
+  const subscription2 = Meteor.subscribe(Comments.allPublicationName);
   return {
     vendors: Vendors.collection.find({}).fetch(),
-    ready: subscription.ready(),
+    comments: Comments.collection.find({}).fetch(),
+    ready: (subscription.ready() && subscription2.ready()),
   };
 })(TodayTopPick);

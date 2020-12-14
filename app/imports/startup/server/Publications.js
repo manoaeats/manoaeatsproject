@@ -4,6 +4,7 @@ import { Vendors } from '../../api/vendor/Vendor';
 import { Menus } from '../../api/menu/Menu';
 import { Foods } from '../../api/food/Food';
 import { UserInfo } from '../../api/userinfo/UserInfo';
+import { Comments } from '../../api/comment/Comment';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -96,6 +97,20 @@ Meteor.publish(Foods.allPublicationName, function () {
     }
     return this.ready();
   });
+
+Meteor.publish(Comments.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Comments.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Comments.allPublicationName, function () {
+  if (this.userId) {
+    return Comments.collection.find();
+  }
+  return this.ready();
+});
 
 // alanning:roles publication
 // Recommended code to publish roles for each user.

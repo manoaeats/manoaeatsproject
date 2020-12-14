@@ -13,6 +13,7 @@ const formSchema = new SimpleSchema({
   cuisine: String,
   location: String,
   image: String,
+  website: String,
   price: {
     type: String,
     allowedValues: ['$', '$$', '$$$'],
@@ -27,9 +28,9 @@ class AddVendor extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { name, cuisine, location, image, price } = data;
+    const { name, cuisine, location, image, website, price } = data;
     const owner = Meteor.user().username;
-    Vendors.collection.insert({ name, cuisine, location, image, price, owner },
+    Vendors.collection.insert({ name, cuisine, location, image, website, price, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -53,6 +54,7 @@ class AddVendor extends React.Component {
                 <TextField id='add-vendor-form-cuisine' name='cuisine'/>
                 <TextField id='add-vendor-form-location' name='location'/>
                 <TextField id='add-vendor-form-image' name='image'/>
+                <TextField id='add-vendor-form-website' name='website'/>
                 <SelectField id='add-vendor-form-price' name='price'/>
                 <SubmitField id='add-vendor-form-submit' value='Submit'/>
                 <ErrorsField/>

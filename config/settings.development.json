@@ -20,6 +20,7 @@
       "location": "Paradise Palms Café",
       "image": "/images/pandaVendorImage.png",
       "owner": "panda@foo.com",
+      "website": "https://manoa.hawaii.edu/food/panda-express/",
       "price": "$"
     },
     {
@@ -29,6 +30,7 @@
       "location": "Paradise Palms Café",
       "image": "/images/HoloholoVendorImage.jpeg",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/holoholo-grill/",
       "price": "$"
     },
     {
@@ -38,6 +40,7 @@
       "location": "Korean Studies",
       "image": "/images/HotTacosVendorImage.png",
       "owner": "admin@foo.com",
+      "website": "https://manoa.hawaii.edu/food/hot-tacos/",
       "price": "$"
     },
     {
@@ -47,6 +50,7 @@
       "location": "Paradise Palms Café",
       "image": "/images/DunkinVendorImage.jpg",
       "owner": "admin@foo.com",
+      "website": "https://manoa.hawaii.edu/food/dunkin/",
       "price": "$"
     },
     {
@@ -56,6 +60,7 @@
       "location": "Saunders",
       "image": "/images/DaSoptVendorImage.png",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/da-spot/",
       "price": "$"
     },
     {
@@ -65,6 +70,7 @@
       "location": "Business Administration",
       "image": "/images/TheBeanCounterVendorImage.png",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/the-bean-counter/",
       "price": "$"
     },
     {
@@ -74,6 +80,7 @@
       "location": "Rotating Truck",
       "image": "/images/GovindasVendorImage.png",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/govindas/",
       "price": "$"
     },
     {
@@ -83,6 +90,7 @@
       "location": "Location TBA",
       "image": "/images/IslandPitaVendorImage.png",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/island-pita/",
       "price": "$"
     },
     {
@@ -92,6 +100,7 @@
       "location": "Rotating between POST and Krauss",
       "image": "/images/KamitokuVendorImage.png",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/kamitoku-ramen/",
       "price": "$"
     },
     {
@@ -101,6 +110,7 @@
       "location": "Paradise Palms Café",
       "image": "/images/LeCrepeCafeVendorImage.png",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/ll-hawaiian-barbecue/",
       "price": "$"
     },
     {
@@ -110,6 +120,7 @@
       "location": "Krauss",
       "image": "/images/OnoSeafoodVendorImage.jpeg",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/ono-seafood/",
       "price": "$"
     },
     {
@@ -119,6 +130,7 @@
       "location": "Krauss",
       "image": "/images/SistahTruckVendorImage.png",
       "owner": "vendor@foo.com",
+      "website": "https://manoa.hawaii.edu/food/sistah/",
       "price": "$"
     },
     {
@@ -128,6 +140,7 @@
       "location": "Campus Center",
       "image": "https://www.subway.com/-/media/Base_English/Images/Branding/subway-logo-new-1200x630.png",
       "owner": "vendor@foo.com",
+      "website": "http://www.hawaii.edu/campuscenter/vendors/subway.html",
       "price": "$"
     },
     {
@@ -137,6 +150,7 @@
       "location": "Hemenway",
       "image": "https://pbs.twimg.com/profile_images/3194446375/bacbc1fc3c8f0127775bb439d78fb4c0.jpeg",
       "owner": "vendor@foo.com",
+      "website": "https://uhm.sodexomyway.com/dining-near-me/ba-le",
       "price": "$"
     },
     {
@@ -146,6 +160,7 @@
       "location": "Campus Center",
       "image": "https://i.pinimg.com/280x280_RS/8f/96/6c/8f966cf7eb441261f1e280274bf8a727.jpg",
       "owner": "vendor@foo.com",
+      "website": "https://uhm.sodexomyway.com/dining-near-me/starbucks",
       "price": "$"
     },
     {
@@ -155,6 +170,7 @@
       "location": "Campus Center",
       "image": "https://mma.prnewswire.com/media/663013/Jamba_Juice_Logo.jpg?p=facebook",
       "owner": "vendor@foo.com",
+      "website": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice",
       "price": "$"
     }
   ],

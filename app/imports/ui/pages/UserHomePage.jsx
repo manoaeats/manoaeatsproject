@@ -51,15 +51,36 @@ class UserHomePage extends React.Component {
     const vendors = Vendors.collection.find({ cuisine: { $in: this.state.cuisines } }).fetch();
     return (
         <div>
-
           <div id="userhome-page" className="manoaeats-UserHomePage-background">
             <Grid container centered stackable columns={1}>
               <Grid.Column textAlign='center'>
                 <div className={'user-home'}>Aloha!</div>
-                <div id="filter-page">
+              </Grid.Column></Grid>
+            <div className={'three-columns'}>
+              <Grid container centered stackable columns={3}>
+                <Grid.Column textAlign='center'>
+                  <Header as='h2'>All Vendors</Header>
+                  <Header as='h4' >Users can view all the list of vendors that we have at UH Manoa.</Header>
+                </Grid.Column>
+
+                <Grid.Column textAlign='center'>
+                  <Header as='h2'>Todays Top Picks</Header>
+                  <Header as='h4'>Users can view the list of most popular foods.</Header>
+                </Grid.Column>
+
+                <Grid.Column textAlign='center'>
+                  <Header as='h2'>Foods Available</Header>
+                  <Header as='h4'>Users can view the list of available foods and their locations.</Header>
+                </Grid.Column>
+              </Grid>
+            </div>
+            <Grid container centered stackable columns={1}>
+              <Grid.Column textAlign='center'>
+                <div id="filter-page" className="filterFunction">
                   <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
                     <Segment>
-                      <MultiSelectField id='cuisine' name='cuisine' showInlineError={true} placeholder={'Cuisines'}/>
+                      <MultiSelectField id='cuisine' name='cuisine' showInlineError={true}
+                                        placeholder={'Search a Cuisine'}/>
                       <SubmitField id='submit' value='Submit'/>
                     </Segment>
                   </AutoForm>
@@ -67,23 +88,6 @@ class UserHomePage extends React.Component {
                     {_.map(vendors, (vendor, index) => <VendorItem key={index} vendor={vendor}/>)}
                   </Card.Group>
                 </div>
-              </Grid.Column>
-            </Grid>
-
-            <Grid container centered stackable columns={3}>
-              <Grid.Column textAlign='center'>
-                <Header as='h1'>All Vendors</Header>
-                <Header as='h4' inverted>Users can view all the list of vendors that we have at UH Manoa.</Header>
-              </Grid.Column>
-
-              <Grid.Column textAlign='center'>
-                <Header as='h1'>Todays Top Picks</Header>
-                <Header as='h4' inverted>Users can view the list of most popular foods.</Header>
-              </Grid.Column>
-
-              <Grid.Column textAlign='center'>
-                <Header as='h1'>Foods Available</Header>
-                <Header as='h4' inverted>Users can view the list of available foods and their locations.</Header>
               </Grid.Column>
             </Grid>
           </div>

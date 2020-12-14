@@ -44,7 +44,7 @@ body {
   font-family: 'Niconne', Luckiest+Guy;
   color: black;
   font-size: 150px;
-  margin-top: 5%;
+  margin-top: -125px;
 }
 
 .search-bar{
@@ -63,6 +63,12 @@ body {
   margin-bottom: 15px;
 }
 
+.filterFunction {
+  margin-top: 25px;
+}
 
+.three-columns {
+  margin-top: -60px;
+}
 
 

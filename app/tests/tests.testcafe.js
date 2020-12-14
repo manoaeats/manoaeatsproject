@@ -16,7 +16,7 @@ const credentials = { username: 'gallego6@hawaii.edu', password: 'alohajerome', 
                       cuisine: 'Chinese', location: 'Paradise Palms Café', image: '/images/pandaVendorImage.png', price: '$' };
 
 fixture('meteor-application-template-react localhost test with default db')
-    .page('http://localhost:3000');
+    .page('http://localhost:3000/');
 
 test('Test that landing page shows up', async (testController) => {
   await landingPage.isDisplayed(testController);

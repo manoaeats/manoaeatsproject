@@ -27,7 +27,7 @@ class ListMenu extends React.Component {
           <Table celled style={fontStyle}>
             <Table.Header><Table.Row>
               <Table.HeaderCell>Menu</Table.HeaderCell>
-              <Table.HeaderCell>Price</Table.HeaderCell>
+              <Table.HeaderCell>Price $</Table.HeaderCell>
               <Table.HeaderCell>Calories</Table.HeaderCell>
               <Table.HeaderCell>Description</Table.HeaderCell>
               <Table.HeaderCell>Images</Table.HeaderCell>

@@ -1,6 +1,10 @@
 import React from 'react';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { Meteor } from 'meteor/meteor';
 import { Grid, Header, Segment, Card, Loader } from 'semantic-ui-react';
+// import { UserInfo } from '../../api/userinfo/UserInfo';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
 import SimpleSchema from 'simpl-schema';
 import { _ } from 'meteor/underscore';
 import { AutoForm, SubmitField } from 'uniforms-semantic';
@@ -46,32 +50,6 @@ class UserHomePage extends React.Component {
     /** const userData = _.uniq(emails).map(email => getData(email)); */
     const vendors = Vendors.collection.find({ cuisine: { $in: this.state.cuisines } }).fetch();
     return (
-
-        <div id="userhome-page" className="manoaeats-UserHomePage-background">
-          <Grid className="userhome" container centered stackable columns={1}>
-            <Grid.Column textAlign='center'>
-              <div className={'user-home'}>Aloha!</div>
-              <Search className={'search-bar'}></Search>
-            </Grid.Column>
-          </Grid>
-
-          <Grid container centered stackable columns={3}>
-            <Grid.Column textAlign='center'>
-              <Header as='h1' >All Vendors</Header>
-              <Header as='h4' inverted>Users can view all the list of vendors that we have at UH Manoa.</Header>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center'>
-              <Header as='h1' >Todays Top Picks</Header>
-              <Header as='h4' inverted>Users can view the list of most popular foods.</Header>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center'>
-              <Header as='h1' >Foods Available</Header>
-              <Header as='h4' inverted>Users can view the list of available foods and their locations.</Header>
-            </Grid.Column>
-          </Grid>
-=======
         <div>
           <div id="userhome-page" className="manoaeats-UserHomePage-background">
             <Grid container centered stackable columns={1}>

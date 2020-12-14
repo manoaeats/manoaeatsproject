@@ -1,10 +1,6 @@
 import React from 'react';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { Meteor } from 'meteor/meteor';
 import { Grid, Header, Segment, Card, Loader } from 'semantic-ui-react';
-// import { UserInfo } from '../../api/userinfo/UserInfo';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
 import SimpleSchema from 'simpl-schema';
 import { _ } from 'meteor/underscore';
 import { AutoForm, SubmitField } from 'uniforms-semantic';
@@ -50,7 +46,7 @@ class UserHomePage extends React.Component {
     /** const userData = _.uniq(emails).map(email => getData(email)); */
     const vendors = Vendors.collection.find({ cuisine: { $in: this.state.cuisines } }).fetch();
     return (
-<<<<<<< HEAD
+
         <div id="userhome-page" className="manoaeats-UserHomePage-background">
           <Grid className="userhome" container centered stackable columns={1}>
             <Grid.Column textAlign='center'>
@@ -117,7 +113,6 @@ class UserHomePage extends React.Component {
               </Grid.Column>
             </Grid>
           </div>
->>>>>>> master
         </div>
 
     );

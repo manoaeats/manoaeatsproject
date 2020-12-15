@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-class TodayAvailable {
+class FoodsAvailable {
   constructor() {
     this.pageId = '#foodsavailable-page';
     this.pageSelector = Selector(this.pageId);
@@ -19,4 +19,4 @@ class TodayAvailable {
   }
 }
 
-export const todayTopPickPage = new TodayAvailable();
+export const foodsAvailablePage = new FoodsAvailable();

@@ -8,6 +8,8 @@ import { todayTopPickPage } from './todaytoppick.page';
 import { listVendorAdminPage } from './listvendoradmin.page';
 import { listVendorPage } from './listvendor.page';
 import { addVendorPage } from './addvendor.page';
+import { foodsAvailablePage } from './foodsavailable.page';
+import { addFoodPage } from './addfood.page';
 
 /* global fixture:false, test:false */
 
@@ -73,4 +75,19 @@ test('Test that add vendor page shows up', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAddVendorPage(testController);
   await addVendorPage.isDisplayed(testController);
+});
+
+test('Test that today available page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoFoodsAvailablePage(testController);
+  await foodsAvailablePage.isDisplayed(testController);
+  await foodsAvailablePage.hasCard(testController);
+});
+
+test('Test that add food page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoAddFoodPage(testController);
+  await addFoodPage.isDisplayed(testController);
 });

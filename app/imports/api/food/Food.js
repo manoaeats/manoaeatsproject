@@ -13,7 +13,7 @@ class FoodsCollection {
     this.schema = new SimpleSchema({
       title: String,
       image: String,
-      price: String,
+      price: Number,
       location: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

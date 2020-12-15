@@ -21,14 +21,18 @@ class NavBar extends React.Component {
               <Menu.Item id="navbar-my-vendor" as={NavLink} activeClassName="active" exact to="/list" key='list'>My Vendor</Menu.Item>,
               <Menu.Item id="navbar-foods-available-rightnow" as={NavLink} activeClassName="active" exact to="/food" key='pick'>Foods Available</Menu.Item>,
               <Menu.Item id="navbar-my-vendor" as={NavLink} activeClassName="active" exact to="/list" key='list'>My Vendor</Menu.Item>,
-              <Menu.Item id="navbar-user-profile" as={NavLink} activeClassName="active" exact to="/profile" key='profile'>My Profile</Menu.Item>]
+              <Menu.Item id="navbar-user-profile" as={NavLink} activeClassName="active" exact to="/profile" key='profile'>My Profile</Menu.Item>,
+              <Menu.Item id="navbar-foods-available" as={NavLink} activeClassName="active" exact to="/food" key='food'>Foods Available</Menu.Item>,
+              <Menu.Item id="navbar-my-vendor" as={NavLink} activeClassName="active" exact to="/list" key='list'>My Vendor</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             [<Menu.Item id="navbar-admin" as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>,
-            <Menu.Item id="navbar-admin-add-vendor" as={NavLink} activeClassName="active" exact to="/addAdmin" key='addAdmin'>Add Vendor</Menu.Item>]
+            <Menu.Item id="navbar-admin-add-vendor" as={NavLink} activeClassName="active" exact to="/addAdmin" key='addAdmin'>Add Vendor</Menu.Item>,
+              <Menu.Item id="navbar-admin-add-food" as={NavLink} activeClassName="active" exact to="/addFoodAdmin" key='addFoodAdmin'>Add Food</Menu.Item>]
           ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
-            <Menu.Item id="navbar-add-vendor" as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Vendor</Menu.Item>
+            [<Menu.Item id="navbar-add-vendor" as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Vendor</Menu.Item>,
+            <Menu.Item id="navbar-add-food" as={NavLink} activeClassName="active" exact to="/addFood" key='addFood'>Add Food</Menu.Item>]
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

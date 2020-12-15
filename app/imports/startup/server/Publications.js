@@ -4,7 +4,6 @@ import { Vendors } from '../../api/vendor/Vendor';
 import { Menus } from '../../api/menu/Menu';
 import { Foods } from '../../api/food/Food';
 import { UserInfo } from '../../api/userinfo/UserInfo';
-import { Edits } from '../../api/edit/Edit';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.

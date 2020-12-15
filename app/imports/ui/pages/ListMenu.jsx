@@ -4,6 +4,7 @@ import { Table, Container, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Menus } from '../../api/menu/Menu';
+import { Vendors } from '../../api/vendor/Vendor';
 // import VendorItemAdmin from '../components/VendorItemAdmin';
 import MenuItemList from '../components/MenuItemList';
 
@@ -36,8 +37,10 @@ class ListMenu extends React.Component {
             </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.menus.map((menu) => <MenuItemList key={menu._id} menu={menu}
-                                                                   Menus={Menus}/>)}
+              <MenuItemList></MenuItemList>
+              { /* {this.props.menus.map((menu, index) => <MenuItemList
+                  key={index}
+                  menu={this.props.filter(Vendors._id === Menus.menuVendorId)}/>)} */ }
             </Table.Body>
           </Table>
         </Container>
@@ -48,15 +51,18 @@ class ListMenu extends React.Component {
 /** Require an array of Stuff documents in the props. */
 ListMenu.propTypes = {
   menus: PropTypes.array.isRequired,
+  vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-export default withTracker(() => {
-  // Get access to Stuff documents.
+export default withTracker(({ match }) => {
+  const _id = match.params._id;
   const subscription = Meteor.subscribe(Menus.allPublicationName);
+  const subscription2 = Meteor.subscribe(Vendors.allPublicationName);
   return {
-    menus: Menus.collection.find({}).fetch(),
-    ready: subscription.ready(),
+    vendors: Vendors.collection.find(_id).fetch(),
+    menus: Menus.collection.find({ menuVendorId: _id }).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(ListMenu);

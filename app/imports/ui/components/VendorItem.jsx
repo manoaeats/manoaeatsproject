@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 // import Image from 'semantic-ui-react/dist/commonjs/elements/Image';
@@ -22,7 +22,9 @@ class VendorItem extends React.Component {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
+        <Feed>
           <Link to={`/edit/${this.props.vendor._id}`}>Edit</Link>
+        </Feed>
       </Card.Content>
     </Card>
     );

@@ -13,7 +13,7 @@ class FoodItem extends React.Component {
           <Image src={this.props.food.image} wrapped ui={false} />
           <Card.Content>
             <Card.Header>{this.props.food.title}</Card.Header>
-            <Card.Header>{this.props.food.price}</Card.Header>
+            <Card.Header>$ {this.props.food.price}</Card.Header>
             <Card.Description>
               Location: {this.props.food.location}
             </Card.Description>

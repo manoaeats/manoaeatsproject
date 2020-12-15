@@ -43,6 +43,7 @@ class App extends React.Component {
               <ProtectedRoute path="/menu" component={ListMenu}/>
               <ProtectedRoute path="/pick" component={TodayTopPick}/>
               <ProtectedRoute path="/edit/:_id" component={EditVendor}/>
+              <ProtectedRoute path="/edit2/:_id" component={EditFood}/>
               <ProtectedRoute path="/editfood/:_id" component={EditFood}/>
               <AdminProtectedRoute path="/admin" component={ListVendorAdmin}/>
               <AdminProtectedRoute path="/addAdmin" component={AddVendor}/>

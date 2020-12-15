@@ -75,6 +75,13 @@ Meteor.publish(Menus.vendorPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Foods.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Foods.collection.find();
+  }
+  return this.ready();
+});
+
 Meteor.publish(Foods.vendorPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;

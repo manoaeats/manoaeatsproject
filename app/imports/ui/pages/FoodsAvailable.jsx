@@ -17,7 +17,7 @@ class FoodsAvailable extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
+        <Container id="foodsavailable-page">
           <Grid container centered stackable columns={1}>
             <Grid.Column textAlign='center'>
               <div className={'foods-available'}>Foods Available</div>

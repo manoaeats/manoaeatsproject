@@ -66,6 +66,18 @@ class NavBar {
     await testController.click('#navbar-admin-add-vendor');
     // await testController.click('#login-dropdown-sign-up');
   }
+
+  /** Pull down login menu, go to Foods Available page. */
+  async gotoFoodsAvailablePage(testController) {
+    await testController.click('#navbar-foods-available');
+    // await testController.click('#login-dropdown-sign-up');
+  }
+
+  /** Pull down login menu, go to Add Food page. */
+  async gotoAddFoodPage(testController) {
+    await testController.click('#navbar-admin-add-food');
+    // await testController.click('#login-dropdown-sign-up');
+  }
 }
 
 export const navBar = new NavBar();

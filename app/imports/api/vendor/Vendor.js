@@ -16,6 +16,7 @@ class VendorsCollection {
       location: String,
       image: String,
       owner: String,
+      website: String,
       price: {
         type: String,
         allowedValues: ['$', '$$', '$$$'],

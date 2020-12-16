@@ -1,8 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader } from 'semantic-ui-react';
+import { Container, Header, Loader, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-semantic';
 import { UserInfo } from '../../api/userinfo/UserInfo';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -19,6 +20,16 @@ class UserProfile
     return (
         <Container id='userprofile-page'>
           <Header as="h2" textAlign="center" inverted>My Profile</Header>
+          <AutoForm onSubmit={this.submit}>
+            <Segment>
+              <TextField name='user'/>
+              <TextField name='firstName'/>
+              <TextField name='lastName'/>
+              <SubmitField value='Submit'/>
+              <ErrorsField/>
+              <HiddenField name='owner' />
+            </Segment>
+          </AutoForm>
         </Container>
     );
   }

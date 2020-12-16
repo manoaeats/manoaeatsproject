@@ -8,9 +8,9 @@ class Profile extends React.Component {
   render() {
     return (
         <Table.Row>
-          <Table.Cell>{this.props.user.name}</Table.Cell>
-          <Table.Cell>{this.props.user.quantity}</Table.Cell>
-          <Table.Cell>{this.props.user.condition}</Table.Cell>
+          <Table.Cell>{this.props.user.user}</Table.Cell>
+          <Table.Cell>{this.props.user.firstName}</Table.Cell>
+          <Table.Cell>{this.props.user.lastName}</Table.Cell>
           <Table.Cell>
             <Link to={`/edit/${this.props.user._id}`}>Edit</Link>
           </Table.Cell>

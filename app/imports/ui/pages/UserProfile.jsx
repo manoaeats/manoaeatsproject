@@ -45,9 +45,9 @@ UserProfile
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(UserInfo.userPublicationName);
+  const subscription = Meteor.subscribe('UserInfo');
   return {
-    users: UserInfo.collection.find({}).fetch(),
+    users: UserInfo.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(UserProfile);

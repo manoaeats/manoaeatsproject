@@ -49,8 +49,8 @@ class UserProfile
 
 /** Require an array of Stuff documents in the props. */
 UserProfile.propTypes = {
-  doc: PropTypes.array.isRequired,
-  model: PropTypes.array.isRequired,
+  doc: PropTypes.object,
+  model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
 };
 

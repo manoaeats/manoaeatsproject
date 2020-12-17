@@ -15,8 +15,8 @@ class EditFood extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { image, title, price, location, _id } = data;
-    Foods.collection.update(_id, { $set: { image, title, price, location } }, (error) => (error ?
+    const { image, title, price, location, owner, _id } = data;
+    Foods.collection.update(_id, { $set: { image, title, price, location, owner } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Food updated successfully', 'success')));
   }

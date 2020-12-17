@@ -98,6 +98,13 @@ Meteor.publish(Foods.allPublicationName, function () {
     return this.ready();
   });
 
+Meteor.publish(Foods.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Foods.collection.find();
+  }
+  return this.ready();
+});
+
 Meteor.publish(Comments.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Comments.collection.find();

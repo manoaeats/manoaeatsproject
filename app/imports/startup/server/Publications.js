@@ -130,13 +130,12 @@ Meteor.publish(Comments.allPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish('EditFood', function () {
+Meteor.publish(Foods.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Edits.find();
+    return Foods.collection.find();
   }
   return this.ready();
 });
-
 
 // alanning:roles publication
 // Recommended code to publish roles for each user.

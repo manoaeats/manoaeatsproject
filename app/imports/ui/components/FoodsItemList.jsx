@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // import AddComment from '/imports/ui/components/AddComment';
 // import Comment from '/imports/ui/components/Comment';
 
@@ -19,6 +19,7 @@ class FoodItem extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
+            <Link to={`/editFood/${this.props.food._id}`}>Edit</Link>
           </Card.Content>
         </Card>
     );

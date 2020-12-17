@@ -76,6 +76,24 @@ Meteor.publish(Menus.vendorPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Foods.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Foods.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Foods.vendorPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+      return Foods.collection.find({ owner: username });
+    }
+    return this.ready();
+  }
+  return this.ready();
+});
+
 Meteor.publish(Foods.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
@@ -91,16 +109,9 @@ Meteor.publish(Foods.allPublicationName, function () {
   return this.ready();
 });
 
-  Meteor.publish('UserInfo', function () {
-    if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-      return UserInfo.find();
-    }
-    return this.ready();
-  });
-
-Meteor.publish(Foods.adminPublicationName, function () {
+Meteor.publish('UserInfo', function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Foods.collection.find();
+    return UserInfo.find();
   }
   return this.ready();
 });
